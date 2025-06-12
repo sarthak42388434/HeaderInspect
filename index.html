@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Header Analyzer Tool - Free Online Email Header Analysis</title>
+    <meta name="description" content="Professional email header analyzer tool for security professionals, IT administrators, and email users. Analyze email headers to trace message paths, verify authentication, and identify potential security issues.">
+    <meta name="keywords" content="email header analyzer, email security, DKIM, SPF, DMARC, email authentication, message trace, IT tools">
+    <meta name="author" content="Email Header Analyzer Tool">
+    <meta property="og:title" content="Email Header Analyzer Tool - Free Online Email Header Analysis">
+    <meta property="og:description" content="Analyze email headers to trace message paths, verify authentication, and identify security issues. Free professional tool for IT administrators and security professionals.">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="#">
+    
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .dark-mode {
+            background-color: #1a202c;
+            color: #e2e8f0;
+        }
+        
+        .dark-mode .bg-white {
+            background-color: #2d3748 !important;
+        }
+        
+        .dark-mode .bg-gray-50 {
+            background-color: #1a202c !important;
+        }
+        
+        .dark-mode .bg-gray-100 {
+            background-color: #2d3748 !important;
+        }
+        
+        .dark-mode .text-gray-900 {
+            color: #e2e8f0 !important;
+        }
+        
+        .dark-mode .text-gray-600 {
+            color: #cbd5e0 !important;
+        }
+        
+        .dark-mode .text-gray-500 {
+            color: #a0aec0 !important;
+        }
+        
+        .dark-mode .border-gray-200 {
+            border-color: #4a5568 !important;
+        }
+        
+        .dark-mode .border-gray-300 {
+            border-color: #4a5568 !important;
+        }
+        
+        .collapsible-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .collapsible-content.active {
+            max-height: 1000px;
+            transition: max-height 0.3s ease-in;
+        }
+        
+        .ad-space {
+            min-height: 90px;
+            background: linear-gradient(45deg, #f8f9fa 25%, transparent 25%), 
+                        linear-gradient(-45deg, #f8f9fa 25%, transparent 25%), 
+                        linear-gradient(45deg, transparent 75%, #f8f9fa 75%), 
+                        linear-gradient(-45deg, transparent 75%, #f8f9fa 75%);
+            background-size: 20px 20px;
+            background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+            border: 2px dashed #dee2e6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6c757d;
+            font-size: 14px;
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .analysis-card {
+            transition: all 0.3s ease;
+        }
+        
+        .analysis-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .pulse-loader {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(79, 70, 229, 0.3);
+            border-radius: 50%;
+            border-top-color: #4f46e5;
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <i class="fas fa-envelope-open-text text-2xl text-indigo-600 mr-3"></i>
+                    <h1 class="text-xl font-bold text-gray-900">Email Header Analyzer</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button id="darkModeToggle" class="p-2 rounded-lg bg-gray-100 hover:bg-gray-200 transition-colors duration-200" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon text-gray-600"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Top Banner Ad Space -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-4">
+        <div class="ad-space">
+            Advertisement Space (728x90)
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Hero Section -->
+        <section class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                Email Header Analyzer Tool
+            </h1>
+            <div class="max-w-4xl mx-auto">
+                <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                    Email headers contain vital information about the journey your email takes from sender to recipient. Our professional-grade analyzer helps security professionals, IT administrators, and email users understand message routing, verify authentication protocols, and identify potential security concerns. This tool parses complex header data to reveal sender IP addresses, relay servers, authentication results (SPF, DKIM, DMARC), and delivery timestamps in an easy-to-understand format.
+                </p>
+                <div class="grid md:grid-cols-3 gap-6 text-left">
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <i class="fas fa-shield-alt text-3xl text-green-500 mb-4"></i>
+                        <h3 class="font-semibold text-gray-900 mb-2">Security Analysis</h3>
+                        <p class="text-gray-600 text-sm">Identify authentication results, trace suspicious routing, and verify sender legitimacy through comprehensive header analysis.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <i class="fas fa-route text-3xl text-blue-500 mb-4"></i>
+                        <h3 class="font-semibold text-gray-900 mb-2">Message Tracing</h3>
+                        <p class="text-gray-600 text-sm">Track the complete path your email traveled, including all relay servers and delivery timestamps for troubleshooting.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <i class="fas fa-tools text-3xl text-purple-500 mb-4"></i>
+                        <h3 class="font-semibold text-gray-900 mb-2">IT Troubleshooting</h3>
+                        <p class="text-gray-600 text-sm">Diagnose delivery issues, identify delays, and analyze authentication failures for email system maintenance.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Analyzer Tool -->
+        <section class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 md:p-8 mb-8">
+            <h2 class="text-2xl font-semibold text-gray-900 mb-6">Analyze Your Email Headers</h2>
+            
+            <div class="mb-6">
+                <label for="emailHeaders" class="block text-sm font-medium text-gray-700 mb-2">
+                    Paste Email Headers Below:
+                </label>
+                <textarea 
+                    id="emailHeaders" 
+                    rows="12" 
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 resize-vertical font-mono text-sm"
+                    placeholder="Paste your email headers here. Headers typically start with 'Received:', 'From:', 'To:', etc. You can find these in your email client's 'View Source' or 'Show Original' option."
+                    aria-describedby="headers-help"
+                ></textarea>
+                <p id="headers-help" class="mt-2 text-sm text-gray-500">
+                    <i class="fas fa-info-circle mr-1"></i>
+                    Headers contain technical routing information and do not include personal email content. This analysis happens entirely in your browser.
+                </p>
+            </div>
+
+            <div class="flex flex-wrap gap-4 mb-6">
+                <button 
+                    id="analyzeBtn" 
+                    class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-lg font-medium transition-colors duration-200 flex items-center"
+                    aria-describedby="analyze-help"
+                >
+                    <i class="fas fa-search mr-2"></i>
+                    Analyze Headers
+                </button>
+                <button 
+                    id="sampleBtn" 
+                    class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-6 py-3 rounded-lg font-medium transition-colors duration-200 flex items-center"
+                    aria-describedby="sample-help"
+                >
+                    <i class="fas fa-eye mr-2"></i>
+                    Load Sample Headers
+                </button>
+                <button 
+                    id="clearBtn" 
+                    class="bg-red-100 hover:bg-red-200 text-red-700 px-6 py-3 rounded-lg font-medium transition-colors duration-200 flex items-center"
+                >
+                    <i class="fas fa-trash mr-2"></i>
+                    Clear
+                </button>
+            </div>
+
+            <div id="errorMessage" class="hidden bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg mb-6" role="alert">
+                <i class="fas fa-exclamation-triangle mr-2"></i>
+                <span id="errorText"></span>
+            </div>
+
+            <div id="loadingMessage" class="hidden bg-blue-50 border border-blue-200 text-blue-700 px-4 py-3 rounded-lg mb-6">
+                <div class="flex items-center">
+                    <div class="pulse-loader mr-3"></div>
+                    <span>Analyzing email headers...</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section id="resultsSection" class="hidden">
+            <h2 class="text-2xl font-semibold text-gray-900 mb-6">Analysis Results</h2>
+            
+            <!-- In-Content Ad Space -->
+            <div class="ad-space mb-8">
+                In-Content Advertisement Space (728x90 or 336x280)
+            </div>
+            
+            <div id="analysisResults" class="space-y-6">
+                <!-- Results will be populated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- How to Use Section -->
+        <section class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 md:p-8 mb-8">
+            <h2 class="text-2xl font-semibold text-gray-900 mb-6">How to Extract Email Headers</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="font-semibold text-gray-900 mb-4 flex items-center">
+                        <i class="fab fa-google text-red-500 mr-2"></i>
+                        Gmail
+                    </h3>
+                    <ol class="list-decimal list-inside space-y-2 text-gray-600 text-sm">
+                        <li>Open the email in Gmail</li>
+                        <li>Click the three dots menu (⋮) next to Reply</li>
+                        <li>Select "Show original"</li>
+                        <li>Copy the entire content that appears</li>
+                        <li>Paste it into the analyzer above</li>
+                    </ol>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-gray-900 mb-4 flex items-center">
+                        <i class="fab fa-microsoft text-blue-500 mr-2"></i>
+                        Outlook
+                    </h3>
+                    <ol class="list-decimal list-inside space-y-2 text-gray-600 text-sm">
+                        <li>Open the email in Outlook</li>
+                        <li>Click File → Properties</li>
+                        <li>Or right-click email → View Source</li>
+                        <li>Copy the headers from the Internet Headers box</li>
+                        <li>Paste them into the analyzer tool</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 md:p-8 mb-8">
+            <h2 class="text-2xl font-semibold text-gray-900 mb-6">Frequently Asked Questions</h2>
+            <div class="space-y-4">
+                <div class="border-b border-gray-200 pb-4">
+                    <button class="faq-toggle w-full text-left font-medium text-gray-900 flex justify-between items-center" data-target="faq1">
+                        What information can I learn from email headers?
+                        <i class="fas fa-chevron-down transform transition-transform duration-200"></i>
+                    </button>
+                    <div id="faq1" class="collapsible-content mt-3 text-gray-600 text-sm">
+                        <p>Email headers reveal the technical journey of your message, including sender IP addresses, mail server routes, authentication results (SPF, DKIM, DMARC), delivery timestamps, and potential security indicators. This information helps verify sender legitimacy and diagnose delivery issues.</p>
+                    </div>
+                </div>
+                <div class="border-b border-gray-200 pb-4">
+                    <button class="faq-toggle w-full text-left font-medium text-gray-900 flex justify-between items-center" data-target="faq2">
+                        Is it safe to analyze email headers online?
+                        <i class="fas fa-chevron-down transform transition-transform duration-200"></i>
+                    </button>
+                    <div id="faq2" class="collapsible-content mt-3 text-gray-600 text-sm">
+                        <p>Yes, our tool processes headers entirely in your browser without sending data to external servers. Email headers contain technical routing information, not personal message content. However, headers may include IP addresses and server names from your organization.</p>
+                    </div>
+                </div>
+                <div class="border-b border-gray-200 pb-4">
+                    <button class="faq-toggle w-full text-left font-medium text-gray-900 flex justify-between items-center" data-target="faq3">
+                        What do SPF, DKIM, and DMARC mean?
+                        <i class="fas fa-chevron-down transform transition-transform duration-200"></i>
+                    </button>
+                    <div id="faq3" class="collapsible-content mt-3 text-gray-600 text-sm">
+                        <p>These are email authentication protocols: SPF (Sender Policy Framework) verifies sending server authorization, DKIM (DomainKeys Identified Mail) provides cryptographic message signing, and DMARC (Domain-based Message Authentication) defines policies for handling authentication failures. These help prevent email spoofing and phishing.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Bottom Banner Ad Space -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+        <div class="ad-space">
+            Bottom Advertisement Space (728x90)
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-envelope-open-text text-2xl text-indigo-600 mr-3"></i>
+                        <h3 class="text-xl font-bold text-gray-900">Email Header Analyzer</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">
+                        A professional tool designed for IT administrators, security professionals, and email users to analyze email headers and understand message routing. Our browser-based analyzer provides comprehensive insights into email authentication, delivery paths, and potential security indicators.
+                    </p>
+                    <p class="text-gray-500 text-xs">
+                        <strong>Important Limitations:</strong> This tool analyzes technical header information only and cannot guarantee email security, prevent spam, or access personal message content. Results are for informational purposes and should be interpreted by qualified professionals for security decisions.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-gray-900 mb-4">Resources</h4>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="#" class="hover:text-indigo-600 transition-colors duration-200">How to Use</a></li>
+                        <li><a href="#" class="hover:text-indigo-600 transition-colors duration-200">Email Security Guide</a></li>
+                        <li><a href="#" class="hover:text-indigo-600 transition-colors duration-200">Understanding Headers</a></li>
+                        <li><a href="#" class="hover:text-indigo-600 transition-colors duration-200">Troubleshooting Tips</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-gray-900 mb-4">Legal</h4>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="#privacy" class="hover:text-indigo-600 transition-colors duration-200">Privacy Policy</a></li>
+                        <li><a href="#terms" class="hover:text-indigo-600 transition-colors duration-200">Terms of Use</a></li>
+                        <li><a href="mailto:support@emailheaderanalyzer.com" class="hover:text-indigo-600 transition-colors duration-200">Contact Support</a></li>
+                        <li><a href="#disclaimer" class="hover:text-indigo-600 transition-colors duration-200">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 mt-8 pt-8 text-center">
+                <p class="text-gray-500 text-sm">
+                    © 2024 Email Header Analyzer Tool. All rights reserved. | 
+                    This tool is provided for educational and professional use only.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Legal Pages (Hidden by default) -->
+    <div id="privacy" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg max-w-4xl max-h-full overflow-y-auto p-6">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-2xl font-bold text-gray-900">Privacy Policy</h2>
+                <button class="close-modal text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <div class="prose text-sm text-gray-600">
+                <p><strong>Last updated:</strong> 2024</p>
+                <h3>Information We Collect</h3>
+                <p>Our Email Header Analyzer Tool operates entirely in your browser. We do not collect, store, or transmit your email headers or analysis results to our servers.</p>
+                <h3>How We Use Information</h3>
+                <p>All header analysis occurs locally in your browser. No personal data is sent to external servers during the analysis process.</p>
+                <h3>Cookies and Analytics</h3>
+                <p>We may use cookies and analytics services to understand website usage and improve user experience. These do not access your email header data.</p>
+                <h3>Contact</h3>
+                <p>For privacy questions, contact us at: support@emailheaderanalyzer.com</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="terms" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg max-w-4xl max-h-full overflow-y-auto p-6">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-2xl font-bold text-gray-900">Terms of Use</h2>
+                <button class="close-modal text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <div class="prose text-sm text-gray-600">
+                <h3>Acceptance of Terms</h3>
+                <p>By using this Email Header Analyzer Tool, you agree to these terms of use.</p>
+                <h3>Service Description</h3>
+                <p>This tool analyzes email headers to provide information about message routing, authentication, and technical details. It does not guarantee security or prevent spam.</p>
+                <h3>Limitations</h3>
+                <p>This tool is provided "as is" for informational purposes only. We make no warranties about accuracy, completeness, or security implications of analysis results.</p>
+                <h3>User Responsibilities</h3>
+                <p>Users are responsible for ensuring they have permission to analyze email headers and for interpreting results appropriately.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="disclaimer" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg max-w-4xl max-h-full overflow-y-auto p-6">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-2xl font-bold text-gray-900">Disclaimer</h2>
+                <button class="close-modal text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <div class="prose text-sm text-gray-600">
+                <h3>No Security Guarantees</h3>
+                <p>This tool does not guarantee email security, cannot prevent spam, and does not provide absolute verification of sender legitimacy.</p>
+                <h3>Professional Interpretation Required</h3>
+                <p>Results should be interpreted by qualified IT professionals. This tool provides technical information but not security recommendations.</p>
+                <h3>No Personal Information Access</h3>
+                <p>This tool analyzes technical headers only and cannot access personal email content, passwords, or private information.</p>
+                <h3>Educational Purpose</h3>
+                <p>This tool is designed for educational and professional troubleshooting purposes within legal and ethical boundaries.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        class EmailHeaderAnalyzer {
+            constructor() {
+                this.isDarkMode = false;
+                this.init();
+            }
+
+            init() {
+                this.bindEvents();
+                this.loadSampleHeader();
+            }
+
+            bindEvents() {
+                // Dark mode toggle
+                document.getElementById('darkModeToggle').addEventListener('click', () => {
+                    this.toggleDarkMode();
+                });
+
+                // Main buttons
+                document.getElementById('analyzeBtn').addEventListener('click', () => {
+                    this.analyzeHeaders();
+                });
+
+                document.getElementById('sampleBtn').addEventListener('click', () => {
+                    this.loadSampleHeaders();
+                });
+
+                document.getElementById('clearBtn').addEventListener('click', () => {
+                    this.clearAll();
+                });
+
+                // FAQ toggles
+                document.querySelectorAll('.faq-toggle').forEach(button => {
+                    button.addEventListener('click', (e) => {
+                        this.toggleFAQ(e.target.closest('.faq-toggle'));
+                    });
+                });
+
+                // Modal close buttons
+                document.querySelectorAll('.close-modal').forEach(button => {
+                    button.addEventListener('click', (e) => {
+                        e.target.closest('.fixed').classList.add('hidden');
+                    });
+                });
+
+                // Privacy policy links
+                document.querySelectorAll('a[href="#privacy"]').forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        document.getElementById('privacy').classList.remove('hidden');
+                    });
+                });
+
+                document.querySelectorAll('a[href="#terms"]').forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        document.getElementById('terms').classList.remove('hidden');
+                    });
+                });
+
+                document.querySelectorAll('a[href="#disclaimer"]').forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        document.getElementById('disclaimer').classList.remove('hidden');
+                    });
+                });
+            }
+
+            toggleDarkMode() {
+                this.isDarkMode = !this.isDarkMode;
+                document.body.classList.toggle('dark-mode');
+                
+                const icon = document.querySelector('#darkModeToggle i');
+                if (this.isDarkMode) {
+                    icon.className = 'fas fa-sun text-yellow-500';
+                } else {
+                    icon.className = 'fas fa-moon text-gray-600';
+                }
+            }
+
+            loadSampleHeaders() {
+                const sampleHeaders = `Delivered-To: recipient@example.com
+Received: by 2002:a17:902:9b83:0:0:0:0 with SMTP id p3-20020a1709029b8300b0014b7b8c8d1csi123456lc.123.2024.01.15.12.34.56.123;
+        Mon, 15 Jan 2024 12:34:56 -0800 (PST)
+Received: from mail.sender.com (mail.sender.com. [192.168.1.100])
+        by mx.google.com with ESMTPS id abc123sm456789lad.123.2024.01.15.12.34.55
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 15 Jan 2024 12:34:55 -0800 (PST)
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@sender.com header.s=selector1 header.b=ABCdef123;
+       spf=pass (google.com: domain of sender@sender.com designates 192.168.1.100 as permitted sender) smtp.mailfrom=sender@sender.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=sender.com
+Return-Path: <sender@sender.com>
+Received: from [192.168.1.50] (unknown [192.168.1.50])
+	by mail.sender.com (Postfix) with ESMTPSA id 123ABC456DEF
+	for <recipient@example.com>; Mon, 15 Jan 2024 20:34:54 +0000 (UTC)
+Message-ID: <message123@sender.com>
+Date: Mon, 15 Jan 2024 12:34:54 -0800
+MIME-Version: 1.0
+User-Agent: Mozilla/5.0 Thunderbird/91.0
+From: John Doe <sender@sender.com>
+To: recipient@example.com
+Subject: Sample Email for Header Analysis
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit`;
+
+                document.getElementById('emailHeaders').value = sampleHeaders;
+                this.hideError();
+            }
+
+            clearAll() {
+                document.getElementById('emailHeaders').value = '';
+                document.getElementById('resultsSection').classList.add('hidden');
+                this.hideError();
+                this.hideLoading();
+            }
+
+            analyzeHeaders() {
+                const headers = document.getElementById('emailHeaders').value.trim();
+                
+                if (!headers) {
+                    this.showError('Please paste email headers to analyze.');
+                    return;
+                }
+
+                if (!this.validateHeaders(headers)) {
+                    this.showError('The pasted content does not appear to be valid email headers. Please check your input and try again.');
+                    return;
+                }
+
+                this.hideError();
+                this.showLoading();
+
+                // Simulate processing time for better UX
+                setTimeout(() => {
+                    this.processHeaders(headers);
+                    this.hideLoading();
+                }, 1500);
+            }
+
+            validateHeaders(headers) {
+                // Basic validation - check for typical header patterns
+                const headerPatterns = [
+                    /^Received:/im,
+                    /^From:/im,
+                    /^To:/im,
+                    /^Date:/im,
+                    /^Message-ID:/im,
+                    /^Return-Path:/im
+                ];
+
+                return headerPatterns.some(pattern => pattern.test(headers));
+            }
+
+            processHeaders(headers) {
+                const analysis = this.parseHeaders(headers);
+                this.displayResults(analysis);
+                document.getElementById('resultsSection').classList.remove('hidden');
+                
+                // Smooth scroll to results
+                document.getElementById('resultsSection').scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+
+            parseHeaders(headers) {
+                const lines = headers.split('\n');
+                const analysis = {
+                    senderInfo: this.extractSenderInfo(lines),
+                    relayServers: this.extractRelayServers(lines),
+                    authentication: this.extractAuthentication(lines),
+                    timestamps: this.extractTimestamps(lines),
+                    security: this.analyzeSecurityIndicators(lines)
+                };
+
+                return analysis;
+            }
+
+            extractSenderInfo(lines) {
+                const senderInfo = {};
+                
+                lines.forEach(line => {
+                    if (line.match(/^From:/i)) {
+                        senderInfo.from = line.replace(/^From:\s*/i, '').trim();
+                    }
+                    if (line.match(/^Return-Path:/i)) {
+                        senderInfo.returnPath = line.replace(/^Return-Path:\s*/i, '').trim();
+                    }
+                    if (line.match(/^Reply-To:/i)) {
+                        senderInfo.replyTo = line.replace(/^Reply-To:\s*/i, '').trim();
+                    }
+                });
+
+                // Extract IP addresses from received headers
+                const ipMatches = lines.join('\n').match(/\[(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})\]/g);
+                if (ipMatches) {
+                    senderInfo.sourceIPs = [...new Set(ipMatches.map(ip => ip.replace(/[\[\]]/g, '')))];
+                }
+
+                return senderInfo;
+            }
+
+            extractRelayServers(lines) {
+                const relayServers = [];
+                
+                lines.forEach((line, index) => {
+                    if (line.match(/^Received:/i)) {
+                        let fullReceived = line;
+                        
+                        // Handle multi-line received headers
+                        for (let i = index + 1; i < lines.length; i++) {
+                            if (lines[i].match(/^\s+/) && !lines[i].match(/^[A-Za-z-]+:/)) {
+                                fullReceived += ' ' + lines[i].trim();
+                            } else {
+                                break;
+                            }
+                        }
+                        
+                        const relay = this.parseReceivedHeader(fullReceived);
+                        if (relay) {
+                            relayServers.push(relay);
+                        }
+                    }
+                });
+
+                return relayServers.reverse(); // Reverse to show chronological order
+            }
+
+            parseReceivedHeader(receivedLine) {
+                const relay = {};
+                
+                // Extract 'from' server
+                const fromMatch = receivedLine.match(/from\s+([^\s]+)/i);
+                if (fromMatch) {
+                    relay.from = fromMatch[1];
+                }
+                
+                // Extract 'by' server
+                const byMatch = receivedLine.match(/by\s+([^\s]+)/i);
+                if (byMatch) {
+                    relay.by = byMatch[1];
+                }
+                
+                // Extract IP address
+                const ipMatch = receivedLine.match(/\[(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})\]/);
+                if (ipMatch) {
+                    relay.ip = ipMatch[1];
+                }
+                
+                // Extract timestamp
+                const timestampMatch = receivedLine.match(/;\s*(.+)$/);
+                if (timestampMatch) {
+                    relay.timestamp = timestampMatch[1].trim();
+                }
+                
+                // Extract protocol info
+                const protocolMatch = receivedLine.match(/with\s+(\w+)/i);
+                if (protocolMatch) {
+                    relay.protocol = protocolMatch[1];
+                }
+
+                return Object.keys(relay).length > 0 ? relay : null;
+            }
+
+            extractAuthentication(lines) {
+                const auth = {};
+                
+                lines.forEach(line => {
+                    if (line.match(/^Authentication-Results:/i)) {
+                        const authLine = line.replace(/^Authentication-Results:\s*/i, '');
+                        
+                        // Extract SPF
+                        const spfMatch = authLine.match(/spf=(\w+)/i);
+                        if (spfMatch) {
+                            auth.spf = spfMatch[1];
+                        }
+                        
+                        // Extract DKIM
+                        const dkimMatch = authLine.match(/dkim=(\w+)/i);
+                        if (dkimMatch) {
+                            auth.dkim = dkimMatch[1];
+                        }
+                        
+                        // Extract DMARC
+                        const dmarcMatch = authLine.match(/dmarc=(\w+)/i);
+                        if (dmarcMatch) {
+                            auth.dmarc = dmarcMatch[1];
+                        }
+                    }
+                });
+
+                return auth;
+            }
+
+            extractTimestamps(lines) {
+                const timestamps = [];
+                
+                lines.forEach(line => {
+                    if (line.match(/^Date:/i)) {
+                        timestamps.push({
+                            type: 'Message Date',
+                            value: line.replace(/^Date:\s*/i, '').trim()
+                        });
+                    }
+                    
+                    const timestampMatch = line.match(/;\s*(.+)$/);
+                    if (timestampMatch && line.match(/^Received:/i)) {
+                        timestamps.push({
+                            type: 'Received',
+                            value: timestampMatch[1].trim()
+                        });
+                    }
+                });
+
+                return timestamps;
+            }
+
+            analyzeSecurityIndicators(lines) {
+                const security = {
+                    warnings: [],
+                    indicators: []
+                };
+
+                const content = lines.join('\n').toLowerCase();
+
+                // Check for potential security indicators
+                if (content.includes('spf=fail')) {
+                    security.warnings.push('SPF authentication failed - sender may not be authorized');
+                }
+                
+                if (content.includes('dkim=fail')) {
+                    security.warnings.push('DKIM signature verification failed');
+                }
+                
+                if (content.includes('dmarc=fail')) {
+                    security.warnings.push('DMARC policy check failed');
+                }
+
+                // Check for positive indicators
+                if (content.includes('spf=pass')) {
+                    security.indicators.push('SPF authentication passed');
+                }
+                
+                if (content.includes('dkim=pass')) {
+                    security.indicators.push('DKIM signature verified');
+                }
+                
+                if (content.includes('dmarc=pass')) {
+                    security.indicators.push('DMARC policy satisfied');
+                }
+
+                if (content.includes('tls')) {
+                    security.indicators.push('TLS encryption used in transit');
+                }
+
+                return security;
+            }
+
+            displayResults(analysis) {
+                const resultsContainer = document.getElementById('analysisResults');
+                resultsContainer.innerHTML = '';
+
+                // Sender Information Card
+                if (analysis.senderInfo && Object.keys(analysis.senderInfo).length > 0) {
+                    resultsContainer.appendChild(this.createAnalysisCard(
+                        'Sender Information',
+                        'fas fa-user',
+                        'blue',
+                        this.formatSenderInfo(analysis.senderInfo)
+                    ));
+                }
+
+                // Authentication Results Card
+                if (analysis.authentication && Object.keys(analysis.authentication).length > 0) {
+                    resultsContainer.appendChild(this.createAnalysisCard(
+                        'Authentication Results',
+                        'fas fa-shield-alt',
+                        'green',
+                        this.formatAuthentication(analysis.authentication)
+                    ));
+                }
+
+                // Relay Servers Card
+                if (analysis.relayServers && analysis.relayServers.length > 0) {
+                    resultsContainer.appendChild(this.createAnalysisCard(
+                        'Message Route & Relay Servers',
+                        'fas fa-route',
+                        'purple',
+                        this.formatRelayServers(analysis.relayServers)
+                    ));
+                }
+
+                // Security Analysis Card
+                if (analysis.security && (analysis.security.warnings.length > 0 || analysis.security.indicators.length > 0)) {
+                    resultsContainer.appendChild(this.createAnalysisCard(
+                        'Security Analysis',
+                        'fas fa-exclamation-triangle',
+                        'red',
+                        this.formatSecurityAnalysis(analysis.security)
+                    ));
+                }
+
+                // Timestamps Card
+                if (analysis.timestamps && analysis.timestamps.length > 0) {
+                    resultsContainer.appendChild(this.createAnalysisCard(
+                        'Delivery Timestamps',
+                        'fas fa-clock',
+                        'indigo',
+                        this.formatTimestamps(analysis.timestamps)
+                    ));
+                }
+            }
+
+            createAnalysisCard(title, icon, color, content) {
+                const card = document.createElement('div');
+                card.className = 'analysis-card bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden';
+                
+                const colorClasses = {
+                    blue: 'text-blue-600 bg-blue-50',
+                    green: 'text-green-600 bg-green-50',
+                    purple: 'text-purple-600 bg-purple-50',
+                    red: 'text-red-600 bg-red-50',
+                    indigo: 'text-indigo-600 bg-indigo-50'
+                };
+
+                card.innerHTML = `
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 ${colorClasses[color]} rounded-lg flex items-center justify-center mr-4">
+                                <i class="${icon} text-lg"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-900">${title}</h3>
+                        </div>
+                        <div class="space-y-3">
+                            ${content}
+                        </div>
+                    </div>
+                `;
+
+                return card;
+            }
+
+            formatSenderInfo(senderInfo) {
+                let html = '';
+                
+                if (senderInfo.from) {
+                    html += `<div class="flex justify-between"><span class="font-medium text-gray-700">From:</span><span class="text-gray-600 font-mono text-sm">${this.escapeHtml(senderInfo.from)}</span></div>`;
+                }
+                
+                if (senderInfo.returnPath) {
+                    html += `<div class="flex justify-between"><span class="font-medium text-gray-700">Return Path:</span><span class="text-gray-600 font-mono text-sm">${this.escapeHtml(senderInfo.returnPath)}</span></div>`;
+                }
+                
+                if (senderInfo.replyTo) {
+                    html += `<div class="flex justify-between"><span class="font-medium text-gray-700">Reply To:</span><span class="text-gray-600 font-mono text-sm">${this.escapeHtml(senderInfo.replyTo)}</span></div>`;
+                }
+                
+                if (senderInfo.sourceIPs && senderInfo.sourceIPs.length > 0) {
+                    html += `<div><span class="font-medium text-gray-700">Source IP Addresses:</span>`;
+                    senderInfo.sourceIPs.forEach(ip => {
+                        html += `<div class="ml-4 text-gray-600 font-mono text-sm">${this.escapeHtml(ip)}</div>`;
+                    });
+                    html += `</div>`;
+                }
+
+                return html;
+            }
+
+            formatAuthentication(auth) {
+                let html = '';
+                
+                const statusColors = {
+                    pass: 'text-green-600 bg-green-100',
+                    fail: 'text-red-600 bg-red-100',
+                    neutral: 'text-yellow-600 bg-yellow-100',
+                    none: 'text-gray-600 bg-gray-100'
+                };
+
+                if (auth.spf) {
+                    const colorClass = statusColors[auth.spf.toLowerCase()] || statusColors.neutral;
+                    html += `<div class="flex justify-between items-center">
+                        <span class="font-medium text-gray-700">SPF (Sender Policy Framework):</span>
+                        <span class="px-2 py-1 rounded text-xs font-medium ${colorClass}">${auth.spf.toUpperCase()}</span>
+                    </div>`;
+                }
+                
+                if (auth.dkim) {
+                    const colorClass = statusColors[auth.dkim.toLowerCase()] || statusColors.neutral;
+                    html += `<div class="flex justify-between items-center">
+                        <span class="font-medium text-gray-700">DKIM (Domain Keys):</span>
+                        <span class="px-2 py-1 rounded text-xs font-medium ${colorClass}">${auth.dkim.toUpperCase()}</span>
+                    </div>`;
+                }
+                
+                if (auth.dmarc) {
+                    const colorClass = statusColors[auth.dmarc.toLowerCase()] || statusColors.neutral;
+                    html += `<div class="flex justify-between items-center">
+                        <span class="font-medium text-gray-700">DMARC (Domain-based Auth):</span>
+                        <span class="px-2 py-1 rounded text-xs font-medium ${colorClass}">${auth.dmarc.toUpperCase()}</span>
+                    </div>`;
+                }
+
+                return html;
+            }
+
+            formatRelayServers(relayServers) {
+                let html = '<div class="space-y-4">';
+                
+                relayServers.forEach((relay, index) => {
+                    html += `<div class="bg-gray-50 p-4 rounded-lg border-l-4 border-purple-500">`;
+                    html += `<div class="font-medium text-gray-700 mb-2">Hop ${index + 1}</div>`;
+                    
+                    if (relay.from) {
+                        html += `<div class="text-sm"><strong>From:</strong> <span class="font-mono">${this.escapeHtml(relay.from)}</span></div>`;
+                    }
+                    
+                    if (relay.by) {
+                        html += `<div class="text-sm"><strong>By:</strong> <span class="font-mono">${this.escapeHtml(relay.by)}</span></div>`;
+                    }
+                    
+                    if (relay.ip) {
+                        html += `<div class="text-sm"><strong>IP:</strong> <span class="font-mono text-indigo-600">${this.escapeHtml(relay.ip)}</span></div>`;
+                    }
+                    
+                    if (relay.protocol) {
+                        html += `<div class="text-sm"><strong>Protocol:</strong> <span class="font-mono">${this.escapeHtml(relay.protocol)}</span></div>`;
+                    }
+                    
+                    if (relay.timestamp) {
+                        html += `<div class="text-sm text-gray-500"><strong>Time:</strong> ${this.escapeHtml(relay.timestamp)}</div>`;
+                    }
+                    
+                    html += `</div>`;
+                });
+                
+                html += '</div>';
+                return html;
+            }
+
+            formatSecurityAnalysis(security) {
+                let html = '';
+                
+                if (security.warnings.length > 0) {
+                    html += `<div class="mb-4">
+                        <h4 class="font-medium text-red-700 mb-2 flex items-center">
+                            <i class="fas fa-exclamation-triangle mr-2"></i>
+                            Security Warnings
+                        </h4>
+                        <ul class="space-y-1">`;
+                    
+                    security.warnings.forEach(warning => {
+                        html += `<li class="text-sm text-red-600 flex items-start">
+                            <i class="fas fa-chevron-right text-xs mt-1 mr-2 flex-shrink-0"></i>
+                            ${this.escapeHtml(warning)}
+                        </li>`;
+                    });
+                    
+                    html += `</ul></div>`;
+                }
+                
+                if (security.indicators.length > 0) {
+                    html += `<div>
+                        <h4 class="font-medium text-green-700 mb-2 flex items-center">
+                            <i class="fas fa-check-circle mr-2"></i>
+                            Positive Indicators
+                        </h4>
+                        <ul class="space-y-1">`;
+                    
+                    security.indicators.forEach(indicator => {
+                        html += `<li class="text-sm text-green-600 flex items-start">
+                            <i class="fas fa-chevron-right text-xs mt-1 mr-2 flex-shrink-0"></i>
+                            ${this.escapeHtml(indicator)}
+                        </li>`;
+                    });
+                    
+                    html += `</ul></div>`;
+                }
+
+                return html;
+            }
+
+            formatTimestamps(timestamps) {
+                let html = '<div class="space-y-2">';
+                
+                timestamps.forEach(timestamp => {
+                    html += `<div class="flex justify-between items-start">
+                        <span class="font-medium text-gray-700 text-sm">${this.escapeHtml(timestamp.type)}:</span>
+                        <span class="text-gray-600 text-sm font-mono ml-4">${this.escapeHtml(timestamp.value)}</span>
+                    </div>`;
+                });
+                
+                html += '</div>';
+                return html;
+            }
+
+            toggleFAQ(button) {
+                const target = button.getAttribute('data-target');
+                const content = document.getElementById(target);
+                const icon = button.querySelector('i');
+                
+                content.classList.toggle('active');
+                icon.classList.toggle('rotate-180');
+            }
+
+            showError(message) {
+                const errorDiv = document.getElementById('errorMessage');
+                const errorText = document.getElementById('errorText');
+                errorText.textContent = message;
+                errorDiv.classList.remove('hidden');
+            }
+
+            hideError() {
+                document.getElementById('errorMessage').classList.add('hidden');
+            }
+
+            showLoading() {
+                document.getElementById('loadingMessage').classList.remove('hidden');
+            }
+
+            hideLoading() {
+                document.getElementById('loadingMessage').classList.add('hidden');
+            }
+
+            escapeHtml(text) {
+                const div = document.createElement('div');
+                div.textContent = text;
+                return div.innerHTML;
+            }
+
+            loadSampleHeader() {
+                // This is called on init but doesn't load sample by default
+                // User must click the sample button
+            }
+        }
+
+        // Initialize the analyzer when the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            new EmailHeaderAnalyzer();
+        });
+    </script>
+</body>
+</html>
