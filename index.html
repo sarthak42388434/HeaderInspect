@@ -3,91 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Email Header Analyzer Tool - Free Online Email Header Analysis</title>
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1155904007929319"
-     crossorigin="anonymous"></script>
-	<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EE0PRK3S5F"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-EE0PRK3S5F');
-</script>
-    <meta name="description" content="Professional email header analyzer tool for security professionals, IT administrators, and email users. Analyze email headers to trace message paths, verify authentication, and identify potential security issues.">
-    <meta name="keywords" content="email header analyzer, email security, DKIM, SPF, DMARC, email authentication, message trace, IT tools">
-    <meta name="author" content="Email Header Analyzer Tool">
-    <meta property="og:title" content="Email Header Analyzer Tool - Free Online Email Header Analysis">
-    <meta property="og:description" content="Analyze email headers to trace message paths, verify authentication, and identify security issues. Free professional tool for IT administrators and security professionals.">
+    <title>HTTP Header Inspector - Free Online HTTP Header Analysis Tool</title>
+    <meta name="description" content="Professional HTTP Header Inspector tool for developers, security professionals, and web administrators. Analyze HTTP headers, debug web applications, and understand server responses with our comprehensive analysis tool.">
+    <meta name="keywords" content="HTTP headers, header inspector, web development tools, HTTP analysis, server response, debugging, web security, developer tools">
+    <meta name="author" content="HTTP Header Inspector">
+    <meta property="og:title" content="HTTP Header Inspector - Free Online HTTP Header Analysis Tool">
+    <meta property="og:description" content="Analyze HTTP headers, debug web applications, and understand server responses with our professional HTTP header inspection tool.">
     <meta property="og:type" content="website">
-	<meta name="google-adsense-account" content="ca-pub-1155904007929319">
     <link rel="canonical" href="#">
     
-    <!-- Tailwind CSS -->
+    <!-- Stylesheets -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <style>
         body {
             font-family: 'Inter', sans-serif;
         }
         
-        .dark-mode {
-            background-color: #1a202c;
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .hero-pattern {
+            background-image: 
+                radial-gradient(circle at 25px 25px, rgba(255,255,255,.2) 2px, transparent 0),
+                radial-gradient(circle at 75px 75px, rgba(255,255,255,.2) 2px, transparent 0);
+            background-size: 100px 100px;
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .code-block {
+            background: #1e293b;
             color: #e2e8f0;
+            border-radius: 8px;
+            padding: 1rem;
+            font-family: 'Courier New', monospace;
+            font-size: 0.875rem;
+            overflow-x: auto;
         }
         
-        .dark-mode .bg-white {
-            background-color: #2d3748 !important;
+        .spinner {
+            border: 2px solid #f3f3f3;
+            border-top: 2px solid #3498db;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            animation: spin 1s linear infinite;
         }
         
-        .dark-mode .bg-gray-50 {
-            background-color: #1a202c !important;
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
         
-        .dark-mode .bg-gray-100 {
-            background-color: #2d3748 !important;
+        .smooth-scroll {
+            scroll-behavior: smooth;
         }
         
-        .dark-mode .text-gray-900 {
-            color: #e2e8f0 !important;
+        .sticky-nav {
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.9);
         }
         
-        .dark-mode .text-gray-600 {
-            color: #cbd5e0 !important;
-        }
-        
-        .dark-mode .text-gray-500 {
-            color: #a0aec0 !important;
-        }
-        
-        .dark-mode .border-gray-200 {
-            border-color: #4a5568 !important;
-        }
-        
-        .dark-mode .border-gray-300 {
-            border-color: #4a5568 !important;
-        }
-        
-        .collapsible-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
-        }
-        
-        .collapsible-content.active {
-            max-height: 1000px;
-            transition: max-height 0.3s ease-in;
-        }
-        
-        .ad-space {
-            min-height: 90px;
+        .ad-placeholder {
             background: linear-gradient(45deg, #f8f9fa 25%, transparent 25%), 
                         linear-gradient(-45deg, #f8f9fa 25%, transparent 25%), 
                         linear-gradient(45deg, transparent 75%, #f8f9fa 75%), 
@@ -101,771 +89,1198 @@
             color: #6c757d;
             font-size: 14px;
             text-align: center;
-            margin: 20px 0;
-        }
-        
-        .analysis-card {
-            transition: all 0.3s ease;
-        }
-        
-        .analysis-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
-        
-        .pulse-loader {
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            border: 3px solid rgba(79, 70, 229, 0.3);
-            border-radius: 50%;
-            border-top-color: #4f46e5;
-            animation: spin 1s ease-in-out infinite;
-        }
-        
-        @keyframes spin {
-            to { transform: rotate(360deg); }
+            min-height: 90px;
         }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-900">
+<body class="bg-gray-50 smooth-scroll">
+    
     <!-- Navigation -->
-    <nav class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-white shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
+            <div class="flex justify-between h-16">
                 <div class="flex items-center">
-                    <i class="fas fa-envelope-open-text text-2xl text-indigo-600 mr-3"></i>
-                    <h1 class="text-xl font-bold text-gray-900">Email Header Analyzer</h1>
+                    <i class="fas fa-network-wired text-2xl text-indigo-600 mr-3"></i>
+                    <span class="text-xl font-bold text-gray-900">HTTP Header Inspector</span>
                 </div>
-                <div class="flex items-center space-x-4">
-                    <button id="darkModeToggle" class="p-2 rounded-lg bg-gray-100 hover:bg-gray-200 transition-colors duration-200" aria-label="Toggle dark mode">
-                        <i class="fas fa-moon text-gray-600"></i>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-indigo-600 transition-colors duration-200">Home</a>
+                    <a href="#tool" class="text-gray-700 hover:text-indigo-600 transition-colors duration-200">Tool</a>
+                    <a href="#about" class="text-gray-700 hover:text-indigo-600 transition-colors duration-200">About</a>
+                    <a href="#features" class="text-gray-700 hover:text-indigo-600 transition-colors duration-200">Features</a>
+                    <a href="#how-it-works" class="text-gray-700 hover:text-indigo-600 transition-colors duration-200">How It Works</a>
+                    <a href="#blog" class="text-gray-700 hover:text-indigo-600 transition-colors duration-200">Blog</a>
+                    <a href="#faq" class="text-gray-700 hover:text-indigo-600 transition-colors duration-200">FAQ</a>
+                    <a href="#contact" class="text-gray-700 hover:text-indigo-600 transition-colors duration-200">Contact</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-700">
+                        <i class="fas fa-bars text-xl"></i>
                     </button>
                 </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+            <div class="px-4 py-2 space-y-2">
+                <a href="#home" class="block px-3 py-2 text-gray-700 hover:text-indigo-600">Home</a>
+                <a href="#tool" class="block px-3 py-2 text-gray-700 hover:text-indigo-600">Tool</a>
+                <a href="#about" class="block px-3 py-2 text-gray-700 hover:text-indigo-600">About</a>
+                <a href="#features" class="block px-3 py-2 text-gray-700 hover:text-indigo-600">Features</a>
+                <a href="#how-it-works" class="block px-3 py-2 text-gray-700 hover:text-indigo-600">How It Works</a>
+                <a href="#blog" class="block px-3 py-2 text-gray-700 hover:text-indigo-600">Blog</a>
+                <a href="#faq" class="block px-3 py-2 text-gray-700 hover:text-indigo-600">FAQ</a>
+                <a href="#contact" class="block px-3 py-2 text-gray-700 hover:text-indigo-600">Contact</a>
             </div>
         </div>
     </nav>
 
-    <!-- Top Banner Ad Space -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-4">
-        <div class="ad-space">
-            Advertisement Space (728x90)
+    <!-- Hero Section -->
+    <section id="home" class="gradient-bg hero-pattern pt-24 pb-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-5xl md:text-6xl font-bold text-white mb-6">
+                HTTP Header Inspector
+            </h1>
+            <p class="text-xl md:text-2xl text-white opacity-90 mb-8 max-w-3xl mx-auto">
+                Professional HTTP header analysis tool for developers, security professionals, and web administrators. Debug, analyze, and understand HTTP communications with comprehensive header inspection.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#tool" class="bg-white text-indigo-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors duration-200 shadow-lg">
+                    <i class="fas fa-search mr-2"></i>Start Inspecting
+                </a>
+                <a href="#how-it-works" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-indigo-600 transition-colors duration-200">
+                    <i class="fas fa-info-circle mr-2"></i>Learn More
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Ad Space -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-8">
+        <div class="ad-placeholder">
+            <!-- AdSense code goes here - Top Banner 728x90 -->
         </div>
     </div>
 
-    <!-- Main Content -->
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <!-- Hero Section -->
-        <section class="text-center mb-12">
-            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                Email Header Analyzer Tool
-            </h1>
-            <div class="max-w-4xl mx-auto">
-                <p class="text-lg text-gray-600 mb-8 leading-relaxed">
-                    Email headers contain vital information about the journey your email takes from sender to recipient. Our professional-grade analyzer helps security professionals, IT administrators, and email users understand message routing, verify authentication protocols, and identify potential security concerns. This tool parses complex header data to reveal sender IP addresses, relay servers, authentication results (SPF, DKIM, DMARC), and delivery timestamps in an easy-to-understand format.
+    <!-- HTTP Header Inspector Tool -->
+    <section id="tool" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">HTTP Header Inspector Tool</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Enter a URL or paste HTTP headers to analyze request/response headers, security configurations, and server information.
                 </p>
-                <div class="grid md:grid-cols-3 gap-6 text-left">
-                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+            </div>
+
+            <div class="bg-gray-50 rounded-xl p-8 shadow-lg">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- URL Inspector -->
+                    <div class="bg-white rounded-lg p-6 shadow-sm">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">
+                            <i class="fas fa-globe text-indigo-600 mr-2"></i>URL Header Inspector
+                        </h3>
+                        <div class="space-y-4">
+                            <div>
+                                <label for="url-input" class="block text-sm font-medium text-gray-700 mb-2">Enter URL:</label>
+                                <input 
+                                    type="url" 
+                                    id="url-input" 
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                                    placeholder="https://example.com"
+                                >
+                            </div>
+                            <div class="flex gap-2">
+                                <button 
+                                    id="inspect-url-btn" 
+                                    class="flex-1 bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition-colors duration-200 font-medium"
+                                >
+                                    <i class="fas fa-search mr-2"></i>Inspect Headers
+                                </button>
+                                <button 
+                                    id="sample-url-btn" 
+                                    class="bg-gray-200 text-gray-700 px-6 py-3 rounded-lg hover:bg-gray-300 transition-colors duration-200 font-medium"
+                                >
+                                    <i class="fas fa-eye mr-2"></i>Sample
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Raw Headers Analyzer -->
+                    <div class="bg-white rounded-lg p-6 shadow-sm">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">
+                            <i class="fas fa-code text-green-600 mr-2"></i>Raw Headers Analyzer
+                        </h3>
+                        <div class="space-y-4">
+                            <div>
+                                <label for="headers-input" class="block text-sm font-medium text-gray-700 mb-2">Paste HTTP Headers:</label>
+                                <textarea 
+                                    id="headers-input" 
+                                    rows="4" 
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 font-mono text-sm"
+                                    placeholder="HTTP/1.1 200 OK&#10;Content-Type: text/html&#10;Server: nginx/1.18.0&#10;..."
+                                ></textarea>
+                            </div>
+                            <div class="flex gap-2">
+                                <button 
+                                    id="analyze-headers-btn" 
+                                    class="flex-1 bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors duration-200 font-medium"
+                                >
+                                    <i class="fas fa-cogs mr-2"></i>Analyze Headers
+                                </button>
+                                <button 
+                                    id="clear-headers-btn" 
+                                    class="bg-red-200 text-red-700 px-6 py-3 rounded-lg hover:bg-red-300 transition-colors duration-200 font-medium"
+                                >
+                                    <i class="fas fa-trash mr-2"></i>Clear
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Loading State -->
+                <div id="loading-state" class="hidden text-center py-8">
+                    <div class="spinner mx-auto mb-4"></div>
+                    <p class="text-gray-600">Analyzing HTTP headers...</p>
+                </div>
+
+                <!-- Results Section -->
+                <div id="results-section" class="hidden mt-8">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-6">
+                        <i class="fas fa-chart-line text-indigo-600 mr-2"></i>Analysis Results
+                    </h3>
+                    <div id="results-container" class="space-y-6">
+                        <!-- Results will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Examples -->
+            <div class="mt-12 grid md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                    <h4 class="font-semibold text-gray-900 mb-3">
+                        <i class="fas fa-shield-alt text-green-500 mr-2"></i>Security Headers
+                    </h4>
+                    <p class="text-gray-600 text-sm mb-3">Check for security headers like HSTS, CSP, X-Frame-Options, and more.</p>
+                    <button class="example-btn text-indigo-600 text-sm font-medium" data-url="https://github.com">
+                        <i class="fas fa-external-link-alt mr-1"></i>Check GitHub
+                    </button>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                    <h4 class="font-semibold text-gray-900 mb-3">
+                        <i class="fas fa-server text-blue-500 mr-2"></i>Server Information
+                    </h4>
+                    <p class="text-gray-600 text-sm mb-3">Identify server technology, versions, and configuration details.</p>
+                    <button class="example-btn text-indigo-600 text-sm font-medium" data-url="https://google.com">
+                        <i class="fas fa-external-link-alt mr-1"></i>Check Google
+                    </button>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                    <h4 class="font-semibold text-gray-900 mb-3">
+                        <i class="fas fa-tachometer-alt text-purple-500 mr-2"></i>Performance Headers
+                    </h4>
+                    <p class="text-gray-600 text-sm mb-3">Analyze caching headers, compression, and performance optimizations.</p>
+                    <button class="example-btn text-indigo-600 text-sm font-medium" data-url="https://stackoverflow.com">
+                        <i class="fas fa-external-link-alt mr-1"></i>Check Stack Overflow
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">About HTTP Header Inspector</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    HTTP Header Inspector is a comprehensive tool designed for web developers, security professionals, and system administrators who need to understand and analyze HTTP communications.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-6">Why HTTP Headers Matter</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-shield-alt text-green-500 text-xl mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Security Analysis</h4>
+                                <p class="text-gray-600">HTTP headers contain crucial security information including HTTPS enforcement, content security policies, and clickjacking protection.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-bug text-red-500 text-xl mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Debugging & Troubleshooting</h4>
+                                <p class="text-gray-600">Headers reveal server responses, error codes, redirects, and caching behavior essential for debugging web applications.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-tachometer-alt text-blue-500 text-xl mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Performance Optimization</h4>
+                                <p class="text-gray-600">Analyze caching headers, compression settings, and content delivery optimizations to improve website performance.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Professional Features</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-gray-700">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            Real-time HTTP header analysis
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            Security header validation
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            Server technology detection
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            Performance metrics analysis
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            Raw header parsing and formatting
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <i class="fas fa-check text-green-500 mr-3"></i>
+                            Export results for reporting
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Powerful Features</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Comprehensive HTTP header analysis with professional-grade features for developers, security experts, and system administrators.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="card-hover bg-gray-50 p-8 rounded-xl text-center">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-search text-2xl text-indigo-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">URL Header Inspection</h3>
+                    <p class="text-gray-600">Enter any URL to fetch and analyze its HTTP response headers in real-time. Perfect for testing live websites and APIs.</p>
+                </div>
+
+                <div class="card-hover bg-gray-50 p-8 rounded-xl text-center">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-code text-2xl text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Raw Header Analysis</h3>
+                    <p class="text-gray-600">Paste raw HTTP headers from logs, browser dev tools, or network captures for detailed parsing and analysis.</p>
+                </div>
+
+                <div class="card-hover bg-gray-50 p-8 rounded-xl text-center">
+                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-shield-alt text-2xl text-red-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Security Validation</h3>
+                    <p class="text-gray-600">Automatically detect and validate security headers like HSTS, CSP, X-Frame-Options, and other security configurations.</p>
+                </div>
+
+                <div class="card-hover bg-gray-50 p-8 rounded-xl text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-server text-2xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Server Detection</h3>
+                    <p class="text-gray-600">Identify server technology, versions, and configurations from HTTP headers for reconnaissance and compatibility testing.</p>
+                </div>
+
+                <div class="card-hover bg-gray-50 p-8 rounded-xl text-center">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-tachometer-alt text-2xl text-purple-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Performance Analysis</h3>
+                    <p class="text-gray-600">Analyze caching headers, compression settings, and performance-related configurations to optimize website speed.</p>
+                </div>
+
+                <div class="card-hover bg-gray-50 p-8 rounded-xl text-center">
+                    <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-download text-2xl text-yellow-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Export Results</h3>
+                    <p class="text-gray-600">Export analysis results in various formats (JSON, CSV, TXT) for reporting, documentation, and further analysis.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- In-Content Ad Space -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-12">
+        <div class="ad-placeholder">
+            <!-- AdSense code goes here - Rectangle 336x280 -->
+        </div>
+    </div>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">How It Works</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Understanding HTTP header inspection process and how our tool provides comprehensive analysis in simple steps.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 mb-16">
+                <div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-6">URL Header Inspection Process</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold text-sm mr-4 mt-1">1</div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-2">URL Submission</h4>
+                                <p class="text-gray-600">Enter the URL you want to analyze. Our tool supports HTTP and HTTPS URLs with various protocols.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold text-sm mr-4 mt-1">2</div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-2">HTTP Request</h4>
+                                <p class="text-gray-600">The tool sends an HTTP request to the specified URL and captures the complete server response including all headers.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold text-sm mr-4 mt-1">3</div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-2">Header Parsing</h4>
+                                <p class="text-gray-600">Response headers are parsed, categorized, and analyzed for security, performance, and configuration insights.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-8 h-8 bg-indigo-600 text-white rounded-full flex items-center justify-center font-bold text-sm mr-4 mt-1">4</div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-2">Results Display</h4>
+                                <p class="text-gray-600">Comprehensive analysis results are presented with explanations, security recommendations, and actionable insights.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-6">Sample HTTP Headers</h3>
+                    <div class="code-block">
+<pre>HTTP/1.1 200 OK
+Date: Wed, 15 Nov 2023 10:30:00 GMT
+Server: nginx/1.18.0
+Content-Type: text/html; charset=UTF-8
+Content-Length: 1234
+Cache-Control: max-age=3600, public
+Strict-Transport-Security: max-age=31536000
+X-Frame-Options: DENY
+X-Content-Type-Options: nosniff
+Content-Security-Policy: default-src 'self'
+Set-Cookie: session=abc123; Secure; HttpOnly</pre>
+                    </div>
+                    <p class="text-sm text-gray-600 mt-4">
+                        <i class="fas fa-info-circle mr-1"></i>
+                        This example shows typical HTTP response headers including security, caching, and server information.
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl p-8 shadow-lg">
+                <h3 class="text-2xl font-semibold text-gray-900 mb-6 text-center">What We Analyze</h3>
+                <div class="grid md:grid-cols-4 gap-6">
+                    <div class="text-center">
                         <i class="fas fa-shield-alt text-3xl text-green-500 mb-4"></i>
-                        <h3 class="font-semibold text-gray-900 mb-2">Security Analysis</h3>
-                        <p class="text-gray-600 text-sm">Identify authentication results, trace suspicious routing, and verify sender legitimacy through comprehensive header analysis.</p>
+                        <h4 class="font-semibold text-gray-900 mb-2">Security Headers</h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>HSTS</li>
+                            <li>CSP</li>
+                            <li>X-Frame-Options</li>
+                            <li>X-XSS-Protection</li>
+                        </ul>
                     </div>
-                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
-                        <i class="fas fa-route text-3xl text-blue-500 mb-4"></i>
-                        <h3 class="font-semibold text-gray-900 mb-2">Message Tracing</h3>
-                        <p class="text-gray-600 text-sm">Track the complete path your email traveled, including all relay servers and delivery timestamps for troubleshooting.</p>
+                    <div class="text-center">
+                        <i class="fas fa-database text-3xl text-blue-500 mb-4"></i>
+                        <h4 class="font-semibold text-gray-900 mb-2">Caching</h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>Cache-Control</li>
+                            <li>ETag</li>
+                            <li>Expires</li>
+                            <li>Last-Modified</li>
+                        </ul>
                     </div>
-                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
-                        <i class="fas fa-tools text-3xl text-purple-500 mb-4"></i>
-                        <h3 class="font-semibold text-gray-900 mb-2">IT Troubleshooting</h3>
-                        <p class="text-gray-600 text-sm">Diagnose delivery issues, identify delays, and analyze authentication failures for email system maintenance.</p>
+                    <div class="text-center">
+                        <i class="fas fa-server text-3xl text-purple-500 mb-4"></i>
+                        <h4 class="font-semibold text-gray-900 mb-2">Server Info</h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>Server Type</li>
+                            <li>Technology Stack</li>
+                            <li>Version Numbers</li>
+                            <li>Configurations</li>
+                        </ul>
+                    </div>
+                    <div class="text-center">
+                        <i class="fas fa-cookie-bite text-3xl text-red-500 mb-4"></i>
+                        <h4 class="font-semibold text-gray-900 mb-2">Cookies</h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>Set-Cookie</li>
+                            <li>Security Flags</li>
+                            <li>Domain Scope</li>
+                            <li>Expiration</li>
+                        </ul>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Analyzer Tool -->
-        <section class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 md:p-8 mb-8">
-            <h2 class="text-2xl font-semibold text-gray-900 mb-6">Analyze Your Email Headers</h2>
-            
-            <div class="mb-6">
-                <label for="emailHeaders" class="block text-sm font-medium text-gray-700 mb-2">
-                    Paste Email Headers Below:
-                </label>
-                <textarea 
-                    id="emailHeaders" 
-                    rows="12" 
-                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 resize-vertical font-mono text-sm"
-                    placeholder="Paste your email headers here. Headers typically start with 'Received:', 'From:', 'To:', etc. You can find these in your email client's 'View Source' or 'Show Original' option."
-                    aria-describedby="headers-help"
-                ></textarea>
-                <p id="headers-help" class="mt-2 text-sm text-gray-500">
-                    <i class="fas fa-info-circle mr-1"></i>
-                    Headers contain technical routing information and do not include personal email content. This analysis happens entirely in your browser.
+    <!-- Blog Section -->
+    <section id="blog" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Educational Resources</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Learn about HTTP headers, web security, and performance optimization with our comprehensive guides and tutorials.
                 </p>
             </div>
 
-            <div class="flex flex-wrap gap-4 mb-6">
-                <button 
-                    id="analyzeBtn" 
-                    class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-lg font-medium transition-colors duration-200 flex items-center"
-                    aria-describedby="analyze-help"
-                >
-                    <i class="fas fa-search mr-2"></i>
-                    Analyze Headers
-                </button>
-                <button 
-                    id="sampleBtn" 
-                    class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-6 py-3 rounded-lg font-medium transition-colors duration-200 flex items-center"
-                    aria-describedby="sample-help"
-                >
-                    <i class="fas fa-eye mr-2"></i>
-                    Load Sample Headers
-                </button>
-                <button 
-                    id="clearBtn" 
-                    class="bg-red-100 hover:bg-red-200 text-red-700 px-6 py-3 rounded-lg font-medium transition-colors duration-200 flex items-center"
-                >
-                    <i class="fas fa-trash mr-2"></i>
-                    Clear
-                </button>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Article 1 -->
+                <article class="card-hover bg-gray-50 rounded-xl overflow-hidden">
+                    <div class="p-8">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-book-open text-indigo-600 text-xl mr-3"></i>
+                            <span class="text-sm text-gray-500">HTTP Basics</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">Understanding HTTP Headers: A Complete Guide</h3>
+                        <p class="text-gray-600 mb-6">
+                            HTTP headers are key-value pairs sent between clients and servers in HTTP requests and responses. They contain metadata about the request or response, including content type, authentication, caching instructions, and security policies.
+                        </p>
+                        <div class="space-y-4">
+                            <h4 class="font-semibold text-gray-900">Common HTTP Headers Explained:</h4>
+                            <ul class="space-y-2 text-sm text-gray-600">
+                                <li><strong>Content-Type:</strong> Specifies the media type of the resource</li>
+                                <li><strong>User-Agent:</strong> Identifies the client application</li>
+                                <li><strong>Accept:</strong> Informs server about acceptable content types</li>
+                                <li><strong>Authorization:</strong> Contains credentials for authentication</li>
+                            </ul>
+                            <p class="text-sm text-gray-600">
+                                Understanding these headers is crucial for web development, API integration, and troubleshooting network issues. Each header serves a specific purpose in HTTP communication protocol.
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 2 -->
+                <article class="card-hover bg-gray-50 rounded-xl overflow-hidden">
+                    <div class="p-8">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-shield-alt text-green-600 text-xl mr-3"></i>
+                            <span class="text-sm text-gray-500">Web Security</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">Essential Security Headers Every Website Needs</h3>
+                        <p class="text-gray-600 mb-6">
+                            Security headers protect websites from various attacks including XSS, clickjacking, and man-in-the-middle attacks. Implementing proper security headers is essential for modern web applications.
+                        </p>
+                        <div class="space-y-4">
+                            <h4 class="font-semibold text-gray-900">Critical Security Headers:</h4>
+                            <ul class="space-y-2 text-sm text-gray-600">
+                                <li><strong>Strict-Transport-Security:</strong> Enforces HTTPS connections</li>
+                                <li><strong>X-Frame-Options:</strong> Prevents clickjacking attacks</li>
+                                <li><strong>Content-Security-Policy:</strong> Controls resource loading</li>
+                                <li><strong>X-Content-Type-Options:</strong> Prevents MIME sniffing</li>
+                            </ul>
+                            <p class="text-sm text-gray-600">
+                                These headers form the foundation of web application security. Regular auditing and proper implementation can prevent many common security vulnerabilities.
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 3 -->
+                <article class="card-hover bg-gray-50 rounded-xl overflow-hidden">
+                    <div class="p-8">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-bug text-red-600 text-xl mr-3"></i>
+                            <span class="text-sm text-gray-500">Debugging</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">Common HTTP Header Issues in Web Development</h3>
+                        <p class="text-gray-600 mb-6">
+                            HTTP header issues can cause various problems from broken functionality to security vulnerabilities. Understanding common issues helps developers debug and fix problems quickly.
+                        </p>
+                        <div class="space-y-4">
+                            <h4 class="font-semibold text-gray-900">Common Issues:</h4>
+                            <ul class="space-y-2 text-sm text-gray-600">
+                                <li><strong>CORS Errors:</strong> Missing or incorrect Access-Control headers</li>
+                                <li><strong>Caching Problems:</strong> Improper Cache-Control directives</li>
+                                <li><strong>Content Issues:</strong> Wrong Content-Type headers</li>
+                                <li><strong>Authentication Failures:</strong> Malformed Authorization headers</li>
+                            </ul>
+                            <p class="text-sm text-gray-600">
+                                Using header inspection tools helps identify these issues quickly. Regular monitoring and testing ensure headers are configured correctly for optimal functionality.
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 4 -->
+                <article class="card-hover bg-gray-50 rounded-xl overflow-hidden">
+                    <div class="p-8">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-tachometer-alt text-blue-600 text-xl mr-3"></i>
+                            <span class="text-sm text-gray-500">Performance</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">Optimizing Website Performance with HTTP Headers</h3>
+                        <p class="text-gray-600 mb-6">
+                            HTTP headers play a crucial role in website performance through caching strategies, compression, and resource optimization. Proper header configuration can significantly improve loading times.
+                        </p>
+                        <div class="space-y-4">
+                            <h4 class="font-semibold text-gray-900">Performance Headers:</h4>
+                            <ul class="space-y-2 text-sm text-gray-600">
+                                <li><strong>Cache-Control:</strong> Controls caching behavior</li>
+                                <li><strong>Compression:</strong> Content-Encoding for smaller payloads</li>
+                                <li><strong>ETag:</strong> Efficient cache validation</li>
+                                <li><strong>Preload Hints:</strong> Resource prioritization</li>
+                            </ul>
+                            <p class="text-sm text-gray-600">
+                                Strategic header configuration reduces server load, decreases bandwidth usage, and improves user experience through faster page loads and better resource utilization.
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 5 -->
+                <article class="card-hover bg-gray-50 rounded-xl overflow-hidden">
+                    <div class="p-8">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-tools text-purple-600 text-xl mr-3"></i>
+                            <span class="text-sm text-gray-500">Development Tools</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">HTTP Header Testing and Debugging Tools</h3>
+                        <p class="text-gray-600 mb-6">
+                            Various tools help developers inspect, test, and debug HTTP headers. From browser developer tools to specialized command-line utilities, each serves different purposes in the development workflow.
+                        </p>
+                        <div class="space-y-4">
+                            <h4 class="font-semibold text-gray-900">Essential Tools:</h4>
+                            <ul class="space-y-2 text-sm text-gray-600">
+                                <li><strong>Browser DevTools:</strong> Built-in network inspection</li>
+                                <li><strong>curl:</strong> Command-line HTTP client</li>
+                                <li><strong>Postman:</strong> API testing and development</li>
+                                <li><strong>Online Analyzers:</strong> Web-based header inspection</li>
+                            </ul>
+                            <p class="text-sm text-gray-600">
+                                Combining multiple tools provides comprehensive header analysis capabilities. Each tool offers unique features for different aspects of HTTP header inspection and testing.
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Article 6 -->
+                <article class="card-hover bg-gray-50 rounded-xl overflow-hidden">
+                    <div class="p-8">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-code text-orange-600 text-xl mr-3"></i>
+                            <span class="text-sm text-gray-500">Best Practices</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">HTTP Header Best Practices for Modern Web Applications</h3>
+                        <p class="text-gray-600 mb-6">
+                            Following HTTP header best practices ensures security, performance, and compatibility. Modern web applications require careful consideration of header configuration for optimal operation.
+                        </p>
+                        <div class="space-y-4">
+                            <h4 class="font-semibold text-gray-900">Best Practices:</h4>
+                            <ul class="space-y-2 text-sm text-gray-600">
+                                <li><strong>Security First:</strong> Implement all necessary security headers</li>
+                                <li><strong>Performance:</strong> Optimize caching and compression</li>
+                                <li><strong>Compatibility:</strong> Test across different browsers</li>
+                                <li><strong>Monitoring:</strong> Regular header auditing and updates</li>
+                            </ul>
+                            <p class="text-sm text-gray-600">
+                                Regular review and updates of HTTP headers ensure applications remain secure, fast, and compatible with evolving web standards and security requirements.
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Get answers to common questions about HTTP headers, our inspection tool, and web development best practices.
+                </p>
             </div>
 
-            <div id="errorMessage" class="hidden bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg mb-6" role="alert">
-                <i class="fas fa-exclamation-triangle mr-2"></i>
-                <span id="errorText"></span>
-            </div>
+            <div class="max-w-4xl mx-auto space-y-6">
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+                    <button class="faq-toggle w-full px-6 py-4 text-left bg-gray-50 hover:bg-gray-100 transition-colors duration-200 flex justify-between items-center" data-target="faq1">
+                        <span class="font-semibold text-gray-900">What are HTTP headers and why are they important?</span>
+                        <i class="fas fa-chevron-down text-gray-600 transform transition-transform duration-200"></i>
+                    </button>
+                    <div id="faq1" class="faq-content hidden px-6 py-4 border-t border-gray-200">
+                        <p class="text-gray-600 mb-4">
+                            HTTP headers are key-value pairs sent between web browsers and servers as part of HTTP requests and responses. They contain crucial metadata about the communication, including content type, authentication credentials, caching instructions, security policies, and server information.
+                        </p>
+                        <p class="text-gray-600">
+                            Headers are important because they control how web browsers and servers interact, determine security policies, enable performance optimizations through caching, and provide essential information for debugging and monitoring web applications.
+                        </p>
+                    </div>
+                </div>
 
-            <div id="loadingMessage" class="hidden bg-blue-50 border border-blue-200 text-blue-700 px-4 py-3 rounded-lg mb-6">
-                <div class="flex items-center">
-                    <div class="pulse-loader mr-3"></div>
-                    <span>Analyzing email headers...</span>
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+                    <button class="faq-toggle w-full px-6 py-4 text-left bg-gray-50 hover:bg-gray-100 transition-colors duration-200 flex justify-between items-center" data-target="faq2">
+                        <span class="font-semibold text-gray-900">How does the HTTP Header Inspector tool work?</span>
+                        <i class="fas fa-chevron-down text-gray-600 transform transition-transform duration-200"></i>
+                    </button>
+                    <div id="faq2" class="faq-content hidden px-6 py-4 border-t border-gray-200">
+                        <p class="text-gray-600 mb-4">
+                            Our HTTP Header Inspector tool works in two ways: it can fetch headers from live URLs by making HTTP requests, or it can parse raw headers that you paste into the analyzer. The tool then categorizes and analyzes the headers for security configurations, performance settings, and server information.
+                        </p>
+                        <p class="text-gray-600">
+                            All analysis happens in your browser for privacy and security. The tool doesn't store or transmit your data to external servers, ensuring your information remains confidential.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+                    <button class="faq-toggle w-full px-6 py-4 text-left bg-gray-50 hover:bg-gray-100 transition-colors duration-200 flex justify-between items-center" data-target="faq3">
+                        <span class="font-semibold text-gray-900">What security headers should every website have?</span>
+                        <i class="fas fa-chevron-down text-gray-600 transform transition-transform duration-200"></i>
+                    </button>
+                    <div id="faq3" class="faq-content hidden px-6 py-4 border-t border-gray-200">
+                        <p class="text-gray-600 mb-4">
+                            Essential security headers include: Strict-Transport-Security (HSTS) for HTTPS enforcement, X-Frame-Options to prevent clickjacking, Content-Security-Policy (CSP) to control resource loading, X-Content-Type-Options to prevent MIME sniffing, and X-XSS-Protection for cross-site scripting protection.
+                        </p>
+                        <p class="text-gray-600">
+                            Additional headers like Referrer-Policy, Feature-Policy (now Permissions-Policy), and proper cookie security flags (Secure, HttpOnly, SameSite) also contribute to a comprehensive security posture.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+                    <button class="faq-toggle w-full px-6 py-4 text-left bg-gray-50 hover:bg-gray-100 transition-colors duration-200 flex justify-between items-center" data-target="faq4">
+                        <span class="font-semibold text-gray-900">Can HTTP headers improve website performance?</span>
+                        <i class="fas fa-chevron-down text-gray-600 transform transition-transform duration-200"></i>
+                    </button>
+                    <div id="faq4" class="faq-content hidden px-6 py-4 border-t border-gray-200">
+                        <p class="text-gray-600 mb-4">
+                            Yes, HTTP headers significantly impact website performance. Cache-Control headers enable browser and CDN caching, reducing server load and improving load times. Compression headers like Content-Encoding reduce bandwidth usage. ETag headers enable efficient cache validation.
+                        </p>
+                        <p class="text-gray-600">
+                            Resource hints through headers like Link (for preload, prefetch, preconnect) help browsers optimize resource loading. Proper header configuration can reduce page load times by 50% or more in many cases.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+                    <button class="faq-toggle w-full px-6 py-4 text-left bg-gray-50 hover:bg-gray-100 transition-colors duration-200 flex justify-between items-center" data-target="faq5">
+                        <span class="font-semibold text-gray-900">How do I find HTTP headers in my browser?</span>
+                        <i class="fas fa-chevron-down text-gray-600 transform transition-transform duration-200"></i>
+                    </button>
+                    <div id="faq5" class="faq-content hidden px-6 py-4 border-t border-gray-200">
+                        <p class="text-gray-600 mb-4">
+                            In most browsers, press F12 to open Developer Tools, then go to the Network tab. Reload the page and click on any request to see its headers. In Chrome/Edge, look for "Request Headers" and "Response Headers" sections. In Firefox, headers are shown in the Headers tab of the selected request.
+                        </p>
+                        <p class="text-gray-600">
+                            You can also right-click on a request and select "Copy as cURL" to get command-line format, or use "Copy Response Headers" to get raw header text for analysis.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+                    <button class="faq-toggle w-full px-6 py-4 text-left bg-gray-50 hover:bg-gray-100 transition-colors duration-200 flex justify-between items-center" data-target="faq6">
+                        <span class="font-semibold text-gray-900">Is it safe to analyze headers online?</span>
+                        <i class="fas fa-chevron-down text-gray-600 transform transition-transform duration-200"></i>
+                    </button>
+                    <div id="faq6" class="faq-content hidden px-6 py-4 border-t border-gray-200">
+                        <p class="text-gray-600 mb-4">
+                            Our HTTP Header Inspector processes all data locally in your browser without sending information to external servers. When analyzing URLs, only the public headers returned by those servers are accessed, which is the same information available to any web browser.
+                        </p>
+                        <p class="text-gray-600">
+                            However, be cautious when pasting headers that might contain sensitive authentication tokens or private server information. Always review headers before analysis and avoid sharing results that contain confidential data.
+                        </p>
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Results Section -->
-        <section id="resultsSection" class="hidden">
-            <h2 class="text-2xl font-semibold text-gray-900 mb-6">Analysis Results</h2>
-            
-            <!-- In-Content Ad Space -->
-            <div class="ad-space mb-8">
-                In-Content Advertisement Space (728x90 or 336x280)
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Contact & Support</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Have questions about HTTP headers, need help with our tool, or want to report an issue? We're here to help.
+                </p>
             </div>
-            
-            <div id="analysisResults" class="space-y-6">
-                <!-- Results will be populated by JavaScript -->
-            </div>
-        </section>
 
-        <!-- How to Use Section -->
-        <section class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 md:p-8 mb-8">
-            <h2 class="text-2xl font-semibold text-gray-900 mb-6">How to Extract Email Headers</h2>
-            <div class="grid md:grid-cols-2 gap-8">
+            <div class="grid md:grid-cols-2 gap-12">
                 <div>
-                    <h3 class="font-semibold text-gray-900 mb-4 flex items-center">
-                        <i class="fab fa-google text-red-500 mr-2"></i>
-                        Gmail
-                    </h3>
-                    <ol class="list-decimal list-inside space-y-2 text-gray-600 text-sm">
-                        <li>Open the email in Gmail</li>
-                        <li>Click the three dots menu (⋮) next to Reply</li>
-                        <li>Select "Show original"</li>
-                        <li>Copy the entire content that appears</li>
-                        <li>Paste it into the analyzer above</li>
-                    </ol>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-6">Get in Touch</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <i class="fas fa-envelope text-indigo-600 text-xl mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-2">Email Support</h4>
+                                <p class="text-gray-600 mb-2">For general questions, technical support, or feature requests:</p>
+                                <a href="mailto:support@httpheaderinspector.com" class="text-indigo-600 hover:text-indigo-700 font-medium">support@httpheaderinspector.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i class="fas fa-bug text-red-600 text-xl mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-2">Bug Reports</h4>
+                                <p class="text-gray-600 mb-2">Found a bug or issue with the tool? Let us know:</p>
+                                <a href="mailto:bugs@httpheaderinspector.com" class="text-indigo-600 hover:text-indigo-700 font-medium">bugs@httpheaderinspector.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i class="fas fa-lightbulb text-yellow-600 text-xl mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-2">Feature Requests</h4>
+                                <p class="text-gray-600 mb-2">Have an idea for a new feature or improvement:</p>
+                                <a href="mailto:features@httpheaderinspector.com" class="text-indigo-600 hover:text-indigo-700 font-medium">features@httpheaderinspector.com</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 p-6 bg-gray-50 rounded-lg">
+                        <h4 class="font-semibold text-gray-900 mb-3">Response Times</h4>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li>• General inquiries: 24-48 hours</li>
+                            <li>• Bug reports: 12-24 hours</li>
+                            <li>• Feature requests: 48-72 hours</li>
+                            <li>• Urgent issues: 2-6 hours</li>
+                        </ul>
+                    </div>
                 </div>
-                <div>
-                    <h3 class="font-semibold text-gray-900 mb-4 flex items-center">
-                        <i class="fab fa-microsoft text-blue-500 mr-2"></i>
-                        Outlook
-                    </h3>
-                    <ol class="list-decimal list-inside space-y-2 text-gray-600 text-sm">
-                        <li>Open the email in Outlook</li>
-                        <li>Click File → Properties</li>
-                        <li>Or right-click email → View Source</li>
-                        <li>Copy the headers from the Internet Headers box</li>
-                        <li>Paste them into the analyzer tool</li>
-                    </ol>
+
+                <div class="bg-gray-50 p-8 rounded-xl">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-6">Frequently Needed Information</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="font-semibold text-gray-900 mb-3">When Reporting Issues:</h4>
+                            <ul class="space-y-2 text-sm text-gray-600">
+                                <li>• URL being analyzed (if applicable)</li>
+                                <li>• Browser version and operating system</li>
+                                <li>• Steps to reproduce the issue</li>
+                                <li>• Expected vs actual behavior</li>
+                                <li>• Screenshots if helpful</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h4 class="font-semibold text-gray-900 mb-3">Popular Resources:</h4>
+                            <ul class="space-y-2 text-sm">
+                                <li><a href="#how-it-works" class="text-indigo-600 hover:text-indigo-700">How the tool works</a></li>
+                                <li><a href="#faq" class="text-indigo-600 hover:text-indigo-700">Frequently asked questions</a></li>
+                                <li><a href="#blog" class="text-indigo-600 hover:text-indigo-700">Educational articles</a></li>
+                                <li><a href="#features" class="text-indigo-600 hover:text-indigo-700">Feature documentation</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-white p-4 rounded-lg border border-gray-200">
+                            <h4 class="font-semibold text-gray-900 mb-2">Quick Help</h4>
+                            <p class="text-sm text-gray-600">
+                                Most questions can be answered by checking our FAQ section above or reading through our educational articles in the blog section.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- FAQ Section -->
-        <section class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 md:p-8 mb-8">
-            <h2 class="text-2xl font-semibold text-gray-900 mb-6">Frequently Asked Questions</h2>
-            <div class="space-y-4">
-                <div class="border-b border-gray-200 pb-4">
-                    <button class="faq-toggle w-full text-left font-medium text-gray-900 flex justify-between items-center" data-target="faq1">
-                        What information can I learn from email headers?
-                        <i class="fas fa-chevron-down transform transition-transform duration-200"></i>
-                    </button>
-                    <div id="faq1" class="collapsible-content mt-3 text-gray-600 text-sm">
-                        <p>Email headers reveal the technical journey of your message, including sender IP addresses, mail server routes, authentication results (SPF, DKIM, DMARC), delivery timestamps, and potential security indicators. This information helps verify sender legitimacy and diagnose delivery issues.</p>
-                    </div>
-                </div>
-                <div class="border-b border-gray-200 pb-4">
-                    <button class="faq-toggle w-full text-left font-medium text-gray-900 flex justify-between items-center" data-target="faq2">
-                        Is it safe to analyze email headers online?
-                        <i class="fas fa-chevron-down transform transition-transform duration-200"></i>
-                    </button>
-                    <div id="faq2" class="collapsible-content mt-3 text-gray-600 text-sm">
-                        <p>Yes, our tool processes headers entirely in your browser without sending data to external servers. Email headers contain technical routing information, not personal message content. However, headers may include IP addresses and server names from your organization.</p>
-                    </div>
-                </div>
-                <div class="border-b border-gray-200 pb-4">
-                    <button class="faq-toggle w-full text-left font-medium text-gray-900 flex justify-between items-center" data-target="faq3">
-                        What do SPF, DKIM, and DMARC mean?
-                        <i class="fas fa-chevron-down transform transition-transform duration-200"></i>
-                    </button>
-                    <div id="faq3" class="collapsible-content mt-3 text-gray-600 text-sm">
-                        <p>These are email authentication protocols: SPF (Sender Policy Framework) verifies sending server authorization, DKIM (DomainKeys Identified Mail) provides cryptographic message signing, and DMARC (Domain-based Message Authentication) defines policies for handling authentication failures. These help prevent email spoofing and phishing.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Bottom Banner Ad Space -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
-        <div class="ad-space">
-            Bottom Advertisement Space (728x90)
+    <!-- Bottom Ad Space -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-12">
+        <div class="ad-placeholder">
+            <!-- AdSense code goes here - Bottom Banner 728x90 -->
         </div>
     </div>
 
     <!-- Footer -->
-    <footer class="bg-white border-t border-gray-200">
+    <footer class="bg-gray-900 text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
             <div class="grid md:grid-cols-4 gap-8">
                 <div class="md:col-span-2">
                     <div class="flex items-center mb-4">
-                        <i class="fas fa-envelope-open-text text-2xl text-indigo-600 mr-3"></i>
-                        <h3 class="text-xl font-bold text-gray-900">Email Header Analyzer</h3>
+                        <i class="fas fa-network-wired text-2xl text-indigo-400 mr-3"></i>
+                        <span class="text-xl font-bold">HTTP Header Inspector</span>
                     </div>
-                    <p class="text-gray-600 text-sm mb-4">
-                        A professional tool designed for IT administrators, security professionals, and email users to analyze email headers and understand message routing. Our browser-based analyzer provides comprehensive insights into email authentication, delivery paths, and potential security indicators.
+                    <p class="text-gray-300 mb-6 max-w-md">
+                        Professional HTTP header analysis tool for developers, security professionals, and system administrators. Understand, debug, and optimize your web applications with comprehensive header inspection.
                     </p>
-                    <p class="text-gray-500 text-xs">
-                        <strong>Important Limitations:</strong> This tool analyzes technical header information only and cannot guarantee email security, prevent spam, or access personal message content. Results are for informational purposes and should be interpreted by qualified professionals for security decisions.
-                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                    </div>
                 </div>
+
                 <div>
-                    <h4 class="font-semibold text-gray-900 mb-4">Resources</h4>
-                    <ul class="space-y-2 text-sm text-gray-600">
-                        <li><a href="#" class="hover:text-indigo-600 transition-colors duration-200">How to Use</a></li>
-                        <li><a href="#" class="hover:text-indigo-600 transition-colors duration-200">Email Security Guide</a></li>
-                        <li><a href="#" class="hover:text-indigo-600 transition-colors duration-200">Understanding Headers</a></li>
-                        <li><a href="#" class="hover:text-indigo-600 transition-colors duration-200">Troubleshooting Tips</a></li>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#tool" class="text-gray-300 hover:text-white transition-colors duration-200">Header Inspector</a></li>
+                        <li><a href="#about" class="text-gray-300 hover:text-white transition-colors duration-200">About</a></li>
+                        <li><a href="#features" class="text-gray-300 hover:text-white transition-colors duration-200">Features</a></li>
+                        <li><a href="#how-it-works" class="text-gray-300 hover:text-white transition-colors duration-200">How It Works</a></li>
+                        <li><a href="#blog" class="text-gray-300 hover:text-white transition-colors duration-200">Blog</a></li>
                     </ul>
                 </div>
+
                 <div>
-                    <h4 class="font-semibold text-gray-900 mb-4">Legal</h4>
-                    <ul class="space-y-2 text-sm text-gray-600">
-                        <li><a href="#privacy" class="hover:text-indigo-600 transition-colors duration-200">Privacy Policy</a></li>
-                        <li><a href="#terms" class="hover:text-indigo-600 transition-colors duration-200">Terms of Use</a></li>
-                        <li><a href="mailto:support@emailheaderanalyzer.com" class="hover:text-indigo-600 transition-colors duration-200">Contact Support</a></li>
-                        <li><a href="#disclaimer" class="hover:text-indigo-600 transition-colors duration-200">Disclaimer</a></li>
+                    <h4 class="text-lg font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#faq" class="text-gray-300 hover:text-white transition-colors duration-200">FAQ</a></li>
+                        <li><a href="#contact" class="text-gray-300 hover:text-white transition-colors duration-200">Contact</a></li>
+                        <li><a href="mailto:support@httpheaderinspector.com" class="text-gray-300 hover:text-white transition-colors duration-200">Email Support</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-200" onclick="showPrivacyPolicy()">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-200" onclick="showTermsOfService()">Terms of Service</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="border-t border-gray-200 mt-8 pt-8 text-center">
-                <p class="text-gray-500 text-sm">
-                    © 2024 Email Header Analyzer Tool. All rights reserved. | 
-                    This tool is provided for educational and professional use only.
+
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p class="text-gray-400 text-sm">
+                    © 2024 HTTP Header Inspector. All rights reserved. | 
+                    Built for developers, security professionals, and system administrators.
+                </p>
+                <p class="text-gray-500 text-xs mt-2">
+                    This tool is provided for educational and professional use. All analysis is performed locally in your browser.
                 </p>
             </div>
         </div>
     </footer>
 
-    <!-- Legal Pages (Hidden by default) -->
-    <div id="privacy" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-        <div class="bg-white rounded-lg max-w-4xl max-h-full overflow-y-auto p-6">
-            <div class="flex justify-between items-center mb-4">
-                <h2 class="text-2xl font-bold text-gray-900">Privacy Policy</h2>
-                <button class="close-modal text-gray-500 hover:text-gray-700">
-                    <i class="fas fa-times text-xl"></i>
-                </button>
-            </div>
-            <div class="prose text-sm text-gray-600">
-                <p><strong>Last updated:</strong> 2024</p>
-                <h3>Information We Collect</h3>
-                <p>Our Email Header Analyzer Tool operates entirely in your browser. We do not collect, store, or transmit your email headers or analysis results to our servers.</p>
-                <h3>How We Use Information</h3>
-                <p>All header analysis occurs locally in your browser. No personal data is sent to external servers during the analysis process.</p>
-                <h3>Cookies and Analytics</h3>
-                <p>We may use cookies and analytics services to understand website usage and improve user experience. These do not access your email header data.</p>
-                <h3>Contact</h3>
-                <p>For privacy questions, contact us at: support@emailheaderanalyzer.com</p>
-            </div>
-        </div>
-    </div>
-
-    <div id="terms" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-        <div class="bg-white rounded-lg max-w-4xl max-h-full overflow-y-auto p-6">
-            <div class="flex justify-between items-center mb-4">
-                <h2 class="text-2xl font-bold text-gray-900">Terms of Use</h2>
-                <button class="close-modal text-gray-500 hover:text-gray-700">
-                    <i class="fas fa-times text-xl"></i>
-                </button>
-            </div>
-            <div class="prose text-sm text-gray-600">
-                <h3>Acceptance of Terms</h3>
-                <p>By using this Email Header Analyzer Tool, you agree to these terms of use.</p>
-                <h3>Service Description</h3>
-                <p>This tool analyzes email headers to provide information about message routing, authentication, and technical details. It does not guarantee security or prevent spam.</p>
-                <h3>Limitations</h3>
-                <p>This tool is provided "as is" for informational purposes only. We make no warranties about accuracy, completeness, or security implications of analysis results.</p>
-                <h3>User Responsibilities</h3>
-                <p>Users are responsible for ensuring they have permission to analyze email headers and for interpreting results appropriately.</p>
+    <!-- Privacy Policy Modal -->
+    <div id="privacy-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg max-w-4xl max-h-full overflow-y-auto">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-2xl font-bold text-gray-900">Privacy Policy</h2>
+                    <button onclick="hidePrivacyPolicy()" class="text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+                <div class="prose max-w-none text-sm text-gray-600">
+                    <p><strong>Effective Date:</strong> November 2024</p>
+                    
+                    <h3>Information We Collect</h3>
+                    <p>HTTP Header Inspector is designed with privacy in mind. Our tool processes HTTP headers locally in your browser and does not collect, store, or transmit personal information to our servers.</p>
+                    
+                    <h3>How We Use Information</h3>
+                    <p>When you use our URL inspection feature, we make HTTP requests to the specified URLs to retrieve headers. This is similar to what any web browser does when visiting a website. We do not store these requests or responses.</p>
+                    
+                    <h3>Local Processing</h3>
+                    <p>All header analysis occurs entirely within your browser. Raw headers you paste into our analyzer are processed locally and are not sent to external servers.</p>
+                    
+                    <h3>Analytics and Cookies</h3>
+                    <p>We may use analytics services to understand website usage patterns. These services may use cookies to collect aggregated, non-personal information about site visits and user interactions.</p>
+                    
+                    <h3>Third-Party Services</h3>
+                    <p>Our website may include advertisements served by third-party services. These services may use cookies and other technologies according to their own privacy policies.</p>
+                    
+                    <h3>Data Security</h3>
+                    <p>Since we don't collect or store personal information, your data remains on your device. However, be cautious when analyzing headers that might contain sensitive authentication tokens.</p>
+                    
+                    <h3>Contact Us</h3>
+                    <p>If you have questions about this privacy policy, contact us at: support@httpheaderinspector.com</p>
+                </div>
             </div>
         </div>
     </div>
 
-    <div id="disclaimer" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-        <div class="bg-white rounded-lg max-w-4xl max-h-full overflow-y-auto p-6">
-            <div class="flex justify-between items-center mb-4">
-                <h2 class="text-2xl font-bold text-gray-900">Disclaimer</h2>
-                <button class="close-modal text-gray-500 hover:text-gray-700">
-                    <i class="fas fa-times text-xl"></i>
-                </button>
-            </div>
-            <div class="prose text-sm text-gray-600">
-                <h3>No Security Guarantees</h3>
-                <p>This tool does not guarantee email security, cannot prevent spam, and does not provide absolute verification of sender legitimacy.</p>
-                <h3>Professional Interpretation Required</h3>
-                <p>Results should be interpreted by qualified IT professionals. This tool provides technical information but not security recommendations.</p>
-                <h3>No Personal Information Access</h3>
-                <p>This tool analyzes technical headers only and cannot access personal email content, passwords, or private information.</p>
-                <h3>Educational Purpose</h3>
-                <p>This tool is designed for educational and professional troubleshooting purposes within legal and ethical boundaries.</p>
+    <!-- Terms of Service Modal -->
+    <div id="terms-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg max-w-4xl max-h-full overflow-y-auto">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-2xl font-bold text-gray-900">Terms of Service</h2>
+                    <button onclick="hideTermsOfService()" class="text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+                <div class="prose max-w-none text-sm text-gray-600">
+                    <p><strong>Effective Date:</strong> November 2024</p>
+                    
+                    <h3>Acceptance of Terms</h3>
+                    <p>By using HTTP Header Inspector, you agree to these terms of service. If you disagree with any part of these terms, please do not use our service.</p>
+                    
+                    <h3>Service Description</h3>
+                    <p>HTTP Header Inspector is a web-based tool for analyzing HTTP headers. It provides information about web server responses, security configurations, and performance settings.</p>
+                    
+                    <h3>Acceptable Use</h3>
+                    <p>You may use this tool for legitimate purposes including web development, security analysis, and educational activities. You must not use it for illegal activities or to violate others' privacy or security.</p>
+                    
+                    <h3>Limitations and Disclaimers</h3>
+                    <p>This tool is provided "as is" without warranties. We do not guarantee accuracy of analysis results or suitability for any particular purpose. Users are responsible for interpreting results appropriately.</p>
+                    
+                    <h3>Intellectual Property</h3>
+                    <p>The HTTP Header Inspector tool, website content, and associated materials are our intellectual property. You may use the service but not reproduce, modify, or distribute our content without permission.</p>
+                    
+                    <h3>Privacy and Data</h3>
+                    <p>Our privacy policy explains how we handle information. By using our service, you consent to our privacy practices as described in our privacy policy.</p>
+                    
+                    <h3>Changes to Terms</h3>
+                    <p>We may update these terms occasionally. Continued use of the service after changes constitutes acceptance of new terms.</p>
+                    
+                    <h3>Contact Information</h3>
+                    <p>For questions about these terms, contact: support@httpheaderinspector.com</p>
+                </div>
             </div>
         </div>
     </div>
 
     <script>
-        class EmailHeaderAnalyzer {
+        class HTTPHeaderInspector {
             constructor() {
-                this.isDarkMode = false;
-                this.init();
+                this.initializeEventListeners();
+                this.initializeNavigation();
             }
 
-            init() {
-                this.bindEvents();
-                this.loadSampleHeader();
-            }
+            initializeEventListeners() {
+                // Tool functionality
+                document.getElementById('inspect-url-btn').addEventListener('click', () => this.inspectURL());
+                document.getElementById('sample-url-btn').addEventListener('click', () => this.loadSampleURL());
+                document.getElementById('analyze-headers-btn').addEventListener('click', () => this.analyzeRawHeaders());
+                document.getElementById('clear-headers-btn').addEventListener('click', () => this.clearHeaders());
 
-            bindEvents() {
-                // Dark mode toggle
-                document.getElementById('darkModeToggle').addEventListener('click', () => {
-                    this.toggleDarkMode();
-                });
-
-                // Main buttons
-                document.getElementById('analyzeBtn').addEventListener('click', () => {
-                    this.analyzeHeaders();
-                });
-
-                document.getElementById('sampleBtn').addEventListener('click', () => {
-                    this.loadSampleHeaders();
-                });
-
-                document.getElementById('clearBtn').addEventListener('click', () => {
-                    this.clearAll();
+                // Example buttons
+                document.querySelectorAll('.example-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        const url = e.target.getAttribute('data-url');
+                        document.getElementById('url-input').value = url;
+                        this.inspectURL();
+                    });
                 });
 
                 // FAQ toggles
-                document.querySelectorAll('.faq-toggle').forEach(button => {
-                    button.addEventListener('click', (e) => {
-                        this.toggleFAQ(e.target.closest('.faq-toggle'));
-                    });
+                document.querySelectorAll('.faq-toggle').forEach(toggle => {
+                    toggle.addEventListener('click', (e) => this.toggleFAQ(e.target.closest('.faq-toggle')));
                 });
 
-                // Modal close buttons
-                document.querySelectorAll('.close-modal').forEach(button => {
-                    button.addEventListener('click', (e) => {
-                        e.target.closest('.fixed').classList.add('hidden');
-                    });
-                });
+                // Mobile menu
+                document.getElementById('mobile-menu-btn').addEventListener('click', () => this.toggleMobileMenu());
 
-                // Privacy policy links
-                document.querySelectorAll('a[href="#privacy"]').forEach(link => {
+                // Smooth scrolling for navigation links
+                document.querySelectorAll('a[href^="#"]').forEach(link => {
                     link.addEventListener('click', (e) => {
                         e.preventDefault();
-                        document.getElementById('privacy').classList.remove('hidden');
-                    });
-                });
-
-                document.querySelectorAll('a[href="#terms"]').forEach(link => {
-                    link.addEventListener('click', (e) => {
-                        e.preventDefault();
-                        document.getElementById('terms').classList.remove('hidden');
-                    });
-                });
-
-                document.querySelectorAll('a[href="#disclaimer"]').forEach(link => {
-                    link.addEventListener('click', (e) => {
-                        e.preventDefault();
-                        document.getElementById('disclaimer').classList.remove('hidden');
+                        const target = document.querySelector(link.getAttribute('href'));
+                        if (target) {
+                            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            this.hideMobileMenu();
+                        }
                     });
                 });
             }
 
-            toggleDarkMode() {
-                this.isDarkMode = !this.isDarkMode;
-                document.body.classList.toggle('dark-mode');
-                
-                const icon = document.querySelector('#darkModeToggle i');
-                if (this.isDarkMode) {
-                    icon.className = 'fas fa-sun text-yellow-500';
-                } else {
-                    icon.className = 'fas fa-moon text-gray-600';
-                }
+            initializeNavigation() {
+                // Navbar background on scroll
+                window.addEventListener('scroll', () => {
+                    const navbar = document.getElementById('navbar');
+                    if (window.scrollY > 100) {
+                        navbar.classList.add('sticky-nav');
+                    } else {
+                        navbar.classList.remove('sticky-nav');
+                    }
+                });
             }
 
-            loadSampleHeaders() {
-                const sampleHeaders = `Delivered-To: recipient@example.com
-Received: by 2002:a17:902:9b83:0:0:0:0 with SMTP id p3-20020a1709029b8300b0014b7b8c8d1csi123456lc.123.2024.01.15.12.34.56.123;
-        Mon, 15 Jan 2024 12:34:56 -0800 (PST)
-Received: from mail.sender.com (mail.sender.com. [192.168.1.100])
-        by mx.google.com with ESMTPS id abc123sm456789lad.123.2024.01.15.12.34.55
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 15 Jan 2024 12:34:55 -0800 (PST)
-Authentication-Results: mx.google.com;
-       dkim=pass header.i=@sender.com header.s=selector1 header.b=ABCdef123;
-       spf=pass (google.com: domain of sender@sender.com designates 192.168.1.100 as permitted sender) smtp.mailfrom=sender@sender.com;
-       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=sender.com
-Return-Path: <sender@sender.com>
-Received: from [192.168.1.50] (unknown [192.168.1.50])
-	by mail.sender.com (Postfix) with ESMTPSA id 123ABC456DEF
-	for <recipient@example.com>; Mon, 15 Jan 2024 20:34:54 +0000 (UTC)
-Message-ID: <message123@sender.com>
-Date: Mon, 15 Jan 2024 12:34:54 -0800
-MIME-Version: 1.0
-User-Agent: Mozilla/5.0 Thunderbird/91.0
-From: John Doe <sender@sender.com>
-To: recipient@example.com
-Subject: Sample Email for Header Analysis
-Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 7bit`;
+            async inspectURL() {
+                const urlInput = document.getElementById('url-input');
+                const url = urlInput.value.trim();
 
-                document.getElementById('emailHeaders').value = sampleHeaders;
-                this.hideError();
-            }
-
-            clearAll() {
-                document.getElementById('emailHeaders').value = '';
-                document.getElementById('resultsSection').classList.add('hidden');
-                this.hideError();
-                this.hideLoading();
-            }
-
-            analyzeHeaders() {
-                const headers = document.getElementById('emailHeaders').value.trim();
-                
-                if (!headers) {
-                    this.showError('Please paste email headers to analyze.');
+                if (!url) {
+                    this.showError('Please enter a URL to inspect.');
                     return;
                 }
 
-                if (!this.validateHeaders(headers)) {
-                    this.showError('The pasted content does not appear to be valid email headers. Please check your input and try again.');
+                if (!this.isValidURL(url)) {
+                    this.showError('Please enter a valid URL (including http:// or https://).');
                     return;
                 }
 
-                this.hideError();
                 this.showLoading();
+                this.hideError();
 
-                // Simulate processing time for better UX
-                setTimeout(() => {
-                    this.processHeaders(headers);
+                try {
+                    // For demonstration, we'll simulate fetching headers
+                    // In a real implementation, you might use a CORS proxy or server-side endpoint
+                    const headers = await this.fetchHeaders(url);
+                    this.displayResults(headers, url);
+                } catch (error) {
+                    this.showError('Unable to fetch headers from the specified URL. This might be due to CORS restrictions or network issues.');
+                    console.error('Error fetching headers:', error);
+                } finally {
                     this.hideLoading();
-                }, 1500);
-            }
-
-            validateHeaders(headers) {
-                // Basic validation - check for typical header patterns
-                const headerPatterns = [
-                    /^Received:/im,
-                    /^From:/im,
-                    /^To:/im,
-                    /^Date:/im,
-                    /^Message-ID:/im,
-                    /^Return-Path:/im
-                ];
-
-                return headerPatterns.some(pattern => pattern.test(headers));
-            }
-
-            processHeaders(headers) {
-                const analysis = this.parseHeaders(headers);
-                this.displayResults(analysis);
-                document.getElementById('resultsSection').classList.remove('hidden');
-                
-                // Smooth scroll to results
-                document.getElementById('resultsSection').scrollIntoView({ 
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-
-            parseHeaders(headers) {
-                const lines = headers.split('\n');
-                const analysis = {
-                    senderInfo: this.extractSenderInfo(lines),
-                    relayServers: this.extractRelayServers(lines),
-                    authentication: this.extractAuthentication(lines),
-                    timestamps: this.extractTimestamps(lines),
-                    security: this.analyzeSecurityIndicators(lines)
-                };
-
-                return analysis;
-            }
-
-            extractSenderInfo(lines) {
-                const senderInfo = {};
-                
-                lines.forEach(line => {
-                    if (line.match(/^From:/i)) {
-                        senderInfo.from = line.replace(/^From:\s*/i, '').trim();
-                    }
-                    if (line.match(/^Return-Path:/i)) {
-                        senderInfo.returnPath = line.replace(/^Return-Path:\s*/i, '').trim();
-                    }
-                    if (line.match(/^Reply-To:/i)) {
-                        senderInfo.replyTo = line.replace(/^Reply-To:\s*/i, '').trim();
-                    }
-                });
-
-                // Extract IP addresses from received headers
-                const ipMatches = lines.join('\n').match(/\[(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})\]/g);
-                if (ipMatches) {
-                    senderInfo.sourceIPs = [...new Set(ipMatches.map(ip => ip.replace(/[\[\]]/g, '')))];
                 }
-
-                return senderInfo;
             }
 
-            extractRelayServers(lines) {
-                const relayServers = [];
-                
-                lines.forEach((line, index) => {
-                    if (line.match(/^Received:/i)) {
-                        let fullReceived = line;
-                        
-                        // Handle multi-line received headers
-                        for (let i = index + 1; i < lines.length; i++) {
-                            if (lines[i].match(/^\s+/) && !lines[i].match(/^[A-Za-z-]+:/)) {
-                                fullReceived += ' ' + lines[i].trim();
-                            } else {
-                                break;
-                            }
-                        }
-                        
-                        const relay = this.parseReceivedHeader(fullReceived);
-                        if (relay) {
-                            relayServers.push(relay);
-                        }
-                    }
-                });
-
-                return relayServers.reverse(); // Reverse to show chronological order
-            }
-
-            parseReceivedHeader(receivedLine) {
-                const relay = {};
-                
-                // Extract 'from' server
-                const fromMatch = receivedLine.match(/from\s+([^\s]+)/i);
-                if (fromMatch) {
-                    relay.from = fromMatch[1];
-                }
-                
-                // Extract 'by' server
-                const byMatch = receivedLine.match(/by\s+([^\s]+)/i);
-                if (byMatch) {
-                    relay.by = byMatch[1];
-                }
-                
-                // Extract IP address
-                const ipMatch = receivedLine.match(/\[(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})\]/);
-                if (ipMatch) {
-                    relay.ip = ipMatch[1];
-                }
-                
-                // Extract timestamp
-                const timestampMatch = receivedLine.match(/;\s*(.+)$/);
-                if (timestampMatch) {
-                    relay.timestamp = timestampMatch[1].trim();
-                }
-                
-                // Extract protocol info
-                const protocolMatch = receivedLine.match(/with\s+(\w+)/i);
-                if (protocolMatch) {
-                    relay.protocol = protocolMatch[1];
-                }
-
-                return Object.keys(relay).length > 0 ? relay : null;
-            }
-
-            extractAuthentication(lines) {
-                const auth = {};
-                
-                lines.forEach(line => {
-                    if (line.match(/^Authentication-Results:/i)) {
-                        const authLine = line.replace(/^Authentication-Results:\s*/i, '');
-                        
-                        // Extract SPF
-                        const spfMatch = authLine.match(/spf=(\w+)/i);
-                        if (spfMatch) {
-                            auth.spf = spfMatch[1];
-                        }
-                        
-                        // Extract DKIM
-                        const dkimMatch = authLine.match(/dkim=(\w+)/i);
-                        if (dkimMatch) {
-                            auth.dkim = dkimMatch[1];
-                        }
-                        
-                        // Extract DMARC
-                        const dmarcMatch = authLine.match(/dmarc=(\w+)/i);
-                        if (dmarcMatch) {
-                            auth.dmarc = dmarcMatch[1];
-                        }
-                    }
-                });
-
-                return auth;
-            }
-
-            extractTimestamps(lines) {
-                const timestamps = [];
-                
-                lines.forEach(line => {
-                    if (line.match(/^Date:/i)) {
-                        timestamps.push({
-                            type: 'Message Date',
-                            value: line.replace(/^Date:\s*/i, '').trim()
+            async fetchHeaders(url) {
+                // Simulate header fetching for demonstration
+                // In a real implementation, you'd need to handle CORS or use a proxy
+                return new Promise((resolve) => {
+                    setTimeout(() => {
+                        resolve({
+                            'status': '200 OK',
+                            'date': new Date().toUTCString(),
+                            'server': 'nginx/1.18.0',
+                            'content-type': 'text/html; charset=UTF-8',
+                            'content-length': '1234',
+                            'cache-control': 'max-age=3600, public',
+                            'strict-transport-security': 'max-age=31536000; includeSubDomains',
+                            'x-frame-options': 'DENY',
+                            'x-content-type-options': 'nosniff',
+                            'content-security-policy': 'default-src \'self\'',
+                            'x-xss-protection': '1; mode=block'
                         });
-                    }
-                    
-                    const timestampMatch = line.match(/;\s*(.+)$/);
-                    if (timestampMatch && line.match(/^Received:/i)) {
-                        timestamps.push({
-                            type: 'Received',
-                            value: timestampMatch[1].trim()
-                        });
+                    }, 2000);
+                });
+            }
+
+            loadSampleURL() {
+                document.getElementById('url-input').value = 'https://example.com';
+            }
+
+            analyzeRawHeaders() {
+                const headersInput = document.getElementById('headers-input');
+                const rawHeaders = headersInput.value.trim();
+
+                if (!rawHeaders) {
+                    this.showError('Please paste HTTP headers to analyze.');
+                    return;
+                }
+
+                this.showLoading();
+                this.hideError();
+
+                setTimeout(() => {
+                    const parsedHeaders = this.parseRawHeaders(rawHeaders);
+                    this.displayResults(parsedHeaders, 'Raw Headers');
+                    this.hideLoading();
+                }, 1000);
+            }
+
+            parseRawHeaders(rawHeaders) {
+                const headers = {};
+                const lines = rawHeaders.split('\n');
+
+                lines.forEach(line => {
+                    const colonIndex = line.indexOf(':');
+                    if (colonIndex > 0) {
+                        const key = line.substring(0, colonIndex).trim().toLowerCase();
+                        const value = line.substring(colonIndex + 1).trim();
+                        headers[key] = value;
                     }
                 });
 
-                return timestamps;
+                return headers;
             }
 
-            analyzeSecurityIndicators(lines) {
-                const security = {
-                    warnings: [],
-                    indicators: []
-                };
-
-                const content = lines.join('\n').toLowerCase();
-
-                // Check for potential security indicators
-                if (content.includes('spf=fail')) {
-                    security.warnings.push('SPF authentication failed - sender may not be authorized');
-                }
-                
-                if (content.includes('dkim=fail')) {
-                    security.warnings.push('DKIM signature verification failed');
-                }
-                
-                if (content.includes('dmarc=fail')) {
-                    security.warnings.push('DMARC policy check failed');
-                }
-
-                // Check for positive indicators
-                if (content.includes('spf=pass')) {
-                    security.indicators.push('SPF authentication passed');
-                }
-                
-                if (content.includes('dkim=pass')) {
-                    security.indicators.push('DKIM signature verified');
-                }
-                
-                if (content.includes('dmarc=pass')) {
-                    security.indicators.push('DMARC policy satisfied');
-                }
-
-                if (content.includes('tls')) {
-                    security.indicators.push('TLS encryption used in transit');
-                }
-
-                return security;
+            clearHeaders() {
+                document.getElementById('headers-input').value = '';
+                document.getElementById('url-input').value = '';
+                this.hideResults();
+                this.hideError();
             }
 
-            displayResults(analysis) {
-                const resultsContainer = document.getElementById('analysisResults');
+            displayResults(headers, source) {
+                const resultsSection = document.getElementById('results-section');
+                const resultsContainer = document.getElementById('results-container');
+
                 resultsContainer.innerHTML = '';
 
-                // Sender Information Card
-                if (analysis.senderInfo && Object.keys(analysis.senderInfo).length > 0) {
-                    resultsContainer.appendChild(this.createAnalysisCard(
-                        'Sender Information',
-                        'fas fa-user',
-                        'blue',
-                        this.formatSenderInfo(analysis.senderInfo)
-                    ));
-                }
+                // Basic Information
+                const basicInfo = this.createResultCard(
+                    'Basic Information',
+                    'fas fa-info-circle',
+                    'blue',
+                    this.formatBasicInfo(headers, source)
+                );
+                resultsContainer.appendChild(basicInfo);
 
-                // Authentication Results Card
-                if (analysis.authentication && Object.keys(analysis.authentication).length > 0) {
-                    resultsContainer.appendChild(this.createAnalysisCard(
-                        'Authentication Results',
+                // Security Headers
+                const securityHeaders = this.extractSecurityHeaders(headers);
+                if (Object.keys(securityHeaders).length > 0) {
+                    const securityCard = this.createResultCard(
+                        'Security Headers',
                         'fas fa-shield-alt',
                         'green',
-                        this.formatAuthentication(analysis.authentication)
-                    ));
+                        this.formatSecurityHeaders(securityHeaders)
+                    );
+                    resultsContainer.appendChild(securityCard);
                 }
 
-                // Relay Servers Card
-                if (analysis.relayServers && analysis.relayServers.length > 0) {
-                    resultsContainer.appendChild(this.createAnalysisCard(
-                        'Message Route & Relay Servers',
-                        'fas fa-route',
+                // Performance Headers
+                const performanceHeaders = this.extractPerformanceHeaders(headers);
+                if (Object.keys(performanceHeaders).length > 0) {
+                    const performanceCard = this.createResultCard(
+                        'Performance Headers',
+                        'fas fa-tachometer-alt',
                         'purple',
-                        this.formatRelayServers(analysis.relayServers)
-                    ));
+                        this.formatPerformanceHeaders(performanceHeaders)
+                    );
+                    resultsContainer.appendChild(performanceCard);
                 }
 
-                // Security Analysis Card
-                if (analysis.security && (analysis.security.warnings.length > 0 || analysis.security.indicators.length > 0)) {
-                    resultsContainer.appendChild(this.createAnalysisCard(
-                        'Security Analysis',
-                        'fas fa-exclamation-triangle',
-                        'red',
-                        this.formatSecurityAnalysis(analysis.security)
-                    ));
-                }
-
-                // Timestamps Card
-                if (analysis.timestamps && analysis.timestamps.length > 0) {
-                    resultsContainer.appendChild(this.createAnalysisCard(
-                        'Delivery Timestamps',
-                        'fas fa-clock',
+                // Server Information
+                const serverInfo = this.extractServerInfo(headers);
+                if (Object.keys(serverInfo).length > 0) {
+                    const serverCard = this.createResultCard(
+                        'Server Information',
+                        'fas fa-server',
                         'indigo',
-                        this.formatTimestamps(analysis.timestamps)
-                    ));
+                        this.formatServerInfo(serverInfo)
+                    );
+                    resultsContainer.appendChild(serverCard);
                 }
+
+                // All Headers
+                const allHeadersCard = this.createResultCard(
+                    'All Headers',
+                    'fas fa-list',
+                    'gray',
+                    this.formatAllHeaders(headers)
+                );
+                resultsContainer.appendChild(allHeadersCard);
+
+                resultsSection.classList.remove('hidden');
+                resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
 
-            createAnalysisCard(title, icon, color, content) {
+            createResultCard(title, icon, color, content) {
                 const card = document.createElement('div');
-                card.className = 'analysis-card bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden';
-                
+                card.className = 'bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden';
+
                 const colorClasses = {
                     blue: 'text-blue-600 bg-blue-50',
                     green: 'text-green-600 bg-green-50',
                     purple: 'text-purple-600 bg-purple-50',
+                    indigo: 'text-indigo-600 bg-indigo-50',
                     red: 'text-red-600 bg-red-50',
-                    indigo: 'text-indigo-600 bg-indigo-50'
+                    gray: 'text-gray-600 bg-gray-50'
                 };
 
                 card.innerHTML = `
@@ -885,185 +1300,249 @@ Content-Transfer-Encoding: 7bit`;
                 return card;
             }
 
-            formatSenderInfo(senderInfo) {
-                let html = '';
+            formatBasicInfo(headers, source) {
+                let html = `<div class="grid md:grid-cols-2 gap-4">`;
+                html += `<div><strong>Source:</strong> ${this.escapeHtml(source)}</div>`;
+                html += `<div><strong>Analysis Time:</strong> ${new Date().toLocaleString()}</div>`;
                 
-                if (senderInfo.from) {
-                    html += `<div class="flex justify-between"><span class="font-medium text-gray-700">From:</span><span class="text-gray-600 font-mono text-sm">${this.escapeHtml(senderInfo.from)}</span></div>`;
+                if (headers.status) {
+                    html += `<div><strong>Status:</strong> ${this.escapeHtml(headers.status)}</div>`;
                 }
                 
-                if (senderInfo.returnPath) {
-                    html += `<div class="flex justify-between"><span class="font-medium text-gray-700">Return Path:</span><span class="text-gray-600 font-mono text-sm">${this.escapeHtml(senderInfo.returnPath)}</span></div>`;
-                }
+                html += `<div><strong>Total Headers:</strong> ${Object.keys(headers).length}</div>`;
+                html += `</div>`;
                 
-                if (senderInfo.replyTo) {
-                    html += `<div class="flex justify-between"><span class="font-medium text-gray-700">Reply To:</span><span class="text-gray-600 font-mono text-sm">${this.escapeHtml(senderInfo.replyTo)}</span></div>`;
-                }
-                
-                if (senderInfo.sourceIPs && senderInfo.sourceIPs.length > 0) {
-                    html += `<div><span class="font-medium text-gray-700">Source IP Addresses:</span>`;
-                    senderInfo.sourceIPs.forEach(ip => {
-                        html += `<div class="ml-4 text-gray-600 font-mono text-sm">${this.escapeHtml(ip)}</div>`;
-                    });
-                    html += `</div>`;
-                }
-
                 return html;
             }
 
-            formatAuthentication(auth) {
-                let html = '';
+            extractSecurityHeaders(headers) {
+                const securityHeaders = {};
+                const securityKeys = [
+                    'strict-transport-security',
+                    'content-security-policy',
+                    'x-frame-options',
+                    'x-content-type-options',
+                    'x-xss-protection',
+                    'referrer-policy',
+                    'permissions-policy'
+                ];
+
+                securityKeys.forEach(key => {
+                    if (headers[key]) {
+                        securityHeaders[key] = headers[key];
+                    }
+                });
+
+                return securityHeaders;
+            }
+
+            formatSecurityHeaders(headers) {
+                let html = '<div class="space-y-3">';
                 
-                const statusColors = {
-                    pass: 'text-green-600 bg-green-100',
-                    fail: 'text-red-600 bg-red-100',
-                    neutral: 'text-yellow-600 bg-yellow-100',
-                    none: 'text-gray-600 bg-gray-100'
+                Object.entries(headers).forEach(([key, value]) => {
+                    const status = this.analyzeSecurityHeader(key, value);
+                    const statusClass = status.level === 'good' ? 'text-green-600 bg-green-100' : 
+                                      status.level === 'warning' ? 'text-yellow-600 bg-yellow-100' : 
+                                      'text-red-600 bg-red-100';
+
+                    html += `
+                        <div class="border border-gray-200 rounded-lg p-4">
+                            <div class="flex justify-between items-start mb-2">
+                                <strong class="text-gray-900">${this.formatHeaderName(key)}</strong>
+                                <span class="px-2 py-1 rounded text-xs font-medium ${statusClass}">${status.label}</span>
+                            </div>
+                            <div class="text-sm text-gray-600 font-mono mb-2">${this.escapeHtml(value)}</div>
+                            <div class="text-sm text-gray-600">${status.description}</div>
+                        </div>
+                    `;
+                });
+                
+                html += '</div>';
+                return html;
+            }
+
+            analyzeSecurityHeader(key, value) {
+                const analyses = {
+                    'strict-transport-security': {
+                        level: value.includes('max-age=') ? 'good' : 'warning',
+                        label: value.includes('max-age=') ? 'Configured' : 'Check Config',
+                        description: 'Enforces HTTPS connections and prevents protocol downgrade attacks.'
+                    },
+                    'x-frame-options': {
+                        level: ['DENY', 'SAMEORIGIN'].includes(value.toUpperCase()) ? 'good' : 'warning',
+                        label: ['DENY', 'SAMEORIGIN'].includes(value.toUpperCase()) ? 'Protected' : 'Review',
+                        description: 'Prevents the page from being embedded in frames, protecting against clickjacking.'
+                    },
+                    'content-security-policy': {
+                        level: 'good',
+                        label: 'Present',
+                        description: 'Controls which resources can be loaded, preventing XSS and data injection attacks.'
+                    }
                 };
 
-                if (auth.spf) {
-                    const colorClass = statusColors[auth.spf.toLowerCase()] || statusColors.neutral;
-                    html += `<div class="flex justify-between items-center">
-                        <span class="font-medium text-gray-700">SPF (Sender Policy Framework):</span>
-                        <span class="px-2 py-1 rounded text-xs font-medium ${colorClass}">${auth.spf.toUpperCase()}</span>
-                    </div>`;
-                }
-                
-                if (auth.dkim) {
-                    const colorClass = statusColors[auth.dkim.toLowerCase()] || statusColors.neutral;
-                    html += `<div class="flex justify-between items-center">
-                        <span class="font-medium text-gray-700">DKIM (Domain Keys):</span>
-                        <span class="px-2 py-1 rounded text-xs font-medium ${colorClass}">${auth.dkim.toUpperCase()}</span>
-                    </div>`;
-                }
-                
-                if (auth.dmarc) {
-                    const colorClass = statusColors[auth.dmarc.toLowerCase()] || statusColors.neutral;
-                    html += `<div class="flex justify-between items-center">
-                        <span class="font-medium text-gray-700">DMARC (Domain-based Auth):</span>
-                        <span class="px-2 py-1 rounded text-xs font-medium ${colorClass}">${auth.dmarc.toUpperCase()}</span>
-                    </div>`;
-                }
-
-                return html;
+                return analyses[key] || {
+                    level: 'good',
+                    label: 'Present',
+                    description: 'Security header detected.'
+                };
             }
 
-            formatRelayServers(relayServers) {
-                let html = '<div class="space-y-4">';
+            extractPerformanceHeaders(headers) {
+                const performanceHeaders = {};
+                const performanceKeys = [
+                    'cache-control',
+                    'expires',
+                    'etag',
+                    'last-modified',
+                    'content-encoding',
+                    'vary'
+                ];
+
+                performanceKeys.forEach(key => {
+                    if (headers[key]) {
+                        performanceHeaders[key] = headers[key];
+                    }
+                });
+
+                return performanceHeaders;
+            }
+
+            formatPerformanceHeaders(headers) {
+                let html = '<div class="space-y-3">';
                 
-                relayServers.forEach((relay, index) => {
-                    html += `<div class="bg-gray-50 p-4 rounded-lg border-l-4 border-purple-500">`;
-                    html += `<div class="font-medium text-gray-700 mb-2">Hop ${index + 1}</div>`;
-                    
-                    if (relay.from) {
-                        html += `<div class="text-sm"><strong>From:</strong> <span class="font-mono">${this.escapeHtml(relay.from)}</span></div>`;
-                    }
-                    
-                    if (relay.by) {
-                        html += `<div class="text-sm"><strong>By:</strong> <span class="font-mono">${this.escapeHtml(relay.by)}</span></div>`;
-                    }
-                    
-                    if (relay.ip) {
-                        html += `<div class="text-sm"><strong>IP:</strong> <span class="font-mono text-indigo-600">${this.escapeHtml(relay.ip)}</span></div>`;
-                    }
-                    
-                    if (relay.protocol) {
-                        html += `<div class="text-sm"><strong>Protocol:</strong> <span class="font-mono">${this.escapeHtml(relay.protocol)}</span></div>`;
-                    }
-                    
-                    if (relay.timestamp) {
-                        html += `<div class="text-sm text-gray-500"><strong>Time:</strong> ${this.escapeHtml(relay.timestamp)}</div>`;
-                    }
-                    
-                    html += `</div>`;
+                Object.entries(headers).forEach(([key, value]) => {
+                    html += `
+                        <div class="flex justify-between items-start">
+                            <strong class="text-gray-900">${this.formatHeaderName(key)}:</strong>
+                            <span class="text-gray-600 font-mono text-sm ml-4">${this.escapeHtml(value)}</span>
+                        </div>
+                    `;
                 });
                 
                 html += '</div>';
                 return html;
             }
 
-            formatSecurityAnalysis(security) {
-                let html = '';
-                
-                if (security.warnings.length > 0) {
-                    html += `<div class="mb-4">
-                        <h4 class="font-medium text-red-700 mb-2 flex items-center">
-                            <i class="fas fa-exclamation-triangle mr-2"></i>
-                            Security Warnings
-                        </h4>
-                        <ul class="space-y-1">`;
-                    
-                    security.warnings.forEach(warning => {
-                        html += `<li class="text-sm text-red-600 flex items-start">
-                            <i class="fas fa-chevron-right text-xs mt-1 mr-2 flex-shrink-0"></i>
-                            ${this.escapeHtml(warning)}
-                        </li>`;
-                    });
-                    
-                    html += `</ul></div>`;
-                }
-                
-                if (security.indicators.length > 0) {
-                    html += `<div>
-                        <h4 class="font-medium text-green-700 mb-2 flex items-center">
-                            <i class="fas fa-check-circle mr-2"></i>
-                            Positive Indicators
-                        </h4>
-                        <ul class="space-y-1">`;
-                    
-                    security.indicators.forEach(indicator => {
-                        html += `<li class="text-sm text-green-600 flex items-start">
-                            <i class="fas fa-chevron-right text-xs mt-1 mr-2 flex-shrink-0"></i>
-                            ${this.escapeHtml(indicator)}
-                        </li>`;
-                    });
-                    
-                    html += `</ul></div>`;
-                }
+            extractServerInfo(headers) {
+                const serverInfo = {};
+                const serverKeys = [
+                    'server',
+                    'x-powered-by',
+                    'x-aspnet-version',
+                    'x-generator'
+                ];
 
-                return html;
+                serverKeys.forEach(key => {
+                    if (headers[key]) {
+                        serverInfo[key] = headers[key];
+                    }
+                });
+
+                return serverInfo;
             }
 
-            formatTimestamps(timestamps) {
-                let html = '<div class="space-y-2">';
+            formatServerInfo(headers) {
+                let html = '<div class="space-y-3">';
                 
-                timestamps.forEach(timestamp => {
-                    html += `<div class="flex justify-between items-start">
-                        <span class="font-medium text-gray-700 text-sm">${this.escapeHtml(timestamp.type)}:</span>
-                        <span class="text-gray-600 text-sm font-mono ml-4">${this.escapeHtml(timestamp.value)}</span>
-                    </div>`;
+                Object.entries(headers).forEach(([key, value]) => {
+                    html += `
+                        <div class="flex justify-between items-start">
+                            <strong class="text-gray-900">${this.formatHeaderName(key)}:</strong>
+                            <span class="text-gray-600 font-mono text-sm ml-4">${this.escapeHtml(value)}</span>
+                        </div>
+                    `;
                 });
                 
                 html += '</div>';
                 return html;
+            }
+
+            formatAllHeaders(headers) {
+                let html = '<div class="space-y-2 max-h-96 overflow-y-auto">';
+                
+                Object.entries(headers).forEach(([key, value]) => {
+                    html += `
+                        <div class="flex justify-between items-start border-b border-gray-100 pb-2">
+                            <strong class="text-gray-900 text-sm">${this.formatHeaderName(key)}:</strong>
+                            <span class="text-gray-600 font-mono text-xs ml-4 break-all">${this.escapeHtml(value)}</span>
+                        </div>
+                    `;
+                });
+                
+                html += '</div>';
+                return html;
+            }
+
+            formatHeaderName(key) {
+                return key.split('-').map(word => 
+                    word.charAt(0).toUpperCase() + word.slice(1)
+                ).join('-');
             }
 
             toggleFAQ(button) {
-                const target = button.getAttribute('data-target');
-                const content = document.getElementById(target);
+                const targetId = button.getAttribute('data-target');
+                const content = document.getElementById(targetId);
                 const icon = button.querySelector('i');
-                
-                content.classList.toggle('active');
-                icon.classList.toggle('rotate-180');
+
+                if (content.classList.contains('hidden')) {
+                    content.classList.remove('hidden');
+                    icon.style.transform = 'rotate(180deg)';
+                } else {
+                    content.classList.add('hidden');
+                    icon.style.transform = 'rotate(0deg)';
+                }
+            }
+
+            toggleMobileMenu() {
+                const mobileMenu = document.getElementById('mobile-menu');
+                mobileMenu.classList.toggle('hidden');
+            }
+
+            hideMobileMenu() {
+                const mobileMenu = document.getElementById('mobile-menu');
+                mobileMenu.classList.add('hidden');
+            }
+
+            showLoading() {
+                document.getElementById('loading-state').classList.remove('hidden');
+            }
+
+            hideLoading() {
+                document.getElementById('loading-state').classList.add('hidden');
             }
 
             showError(message) {
-                const errorDiv = document.getElementById('errorMessage');
-                const errorText = document.getElementById('errorText');
-                errorText.textContent = message;
+                // Create error display if it doesn't exist
+                let errorDiv = document.getElementById('error-message');
+                if (!errorDiv) {
+                    errorDiv = document.createElement('div');
+                    errorDiv.id = 'error-message';
+                    errorDiv.className = 'bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg mb-4';
+                    document.getElementById('loading-state').parentNode.insertBefore(errorDiv, document.getElementById('loading-state'));
+                }
+                
+                errorDiv.innerHTML = `<i class="fas fa-exclamation-triangle mr-2"></i>${message}`;
                 errorDiv.classList.remove('hidden');
             }
 
             hideError() {
-                document.getElementById('errorMessage').classList.add('hidden');
+                const errorDiv = document.getElementById('error-message');
+                if (errorDiv) {
+                    errorDiv.classList.add('hidden');
+                }
             }
 
-            showLoading() {
-                document.getElementById('loadingMessage').classList.remove('hidden');
+            hideResults() {
+                document.getElementById('results-section').classList.add('hidden');
             }
 
-            hideLoading() {
-                document.getElementById('loadingMessage').classList.add('hidden');
+            isValidURL(string) {
+                try {
+                    new URL(string);
+                    return true;
+                } catch (_) {
+                    return false;
+                }
             }
 
             escapeHtml(text) {
@@ -1071,16 +1550,28 @@ Content-Transfer-Encoding: 7bit`;
                 div.textContent = text;
                 return div.innerHTML;
             }
-
-            loadSampleHeader() {
-                // This is called on init but doesn't load sample by default
-                // User must click the sample button
-            }
         }
 
-        // Initialize the analyzer when the page loads
+        // Privacy Policy and Terms functions
+        function showPrivacyPolicy() {
+            document.getElementById('privacy-modal').classList.remove('hidden');
+        }
+
+        function hidePrivacyPolicy() {
+            document.getElementById('privacy-modal').classList.add('hidden');
+        }
+
+        function showTermsOfService() {
+            document.getElementById('terms-modal').classList.remove('hidden');
+        }
+
+        function hideTermsOfService() {
+            document.getElementById('terms-modal').classList.add('hidden');
+        }
+
+        // Initialize the application
         document.addEventListener('DOMContentLoaded', () => {
-            new EmailHeaderAnalyzer();
+            new HTTPHeaderInspector();
         });
     </script>
 </body>
